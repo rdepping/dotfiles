@@ -268,10 +268,10 @@ function log_bash_persistent_history() {
     if contains "$command_part" "$USER"; then
         return
     fi
-    if contains "$command_part" "jiml"; then
+    if contains "$command_part" "rdepping"; then
         return
     fi
-    if contains "$command_part" "jlawton"; then
+    if contains "$command_part" "ralphd"; then
         return
     fi
     if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]; then

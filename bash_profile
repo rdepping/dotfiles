@@ -78,15 +78,15 @@ fi
 source ~/dotfiles/git/mingit/.bashrc
 
 # Set up virtualenvwrapper.
-if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    source /usr/bin/virtualenvwrapper.sh
-else
-    echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
+#if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+#    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#    source /usr/local/bin/virtualenvwrapper.sh
+#elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
+#    source /usr/bin/virtualenvwrapper.sh
+#else
+#     echo "WARNING: Can't find virtualenvwrapper.sh"
+#fi
 
 # Set up Bash completion.
 if [ -f /etc/bash_completion ]; then
