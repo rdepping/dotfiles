@@ -10,6 +10,7 @@ set match-hidden-files off
 "\e[D": backward-char
 "\e[3;5~": backward-kill-word
 "\C-?": backward-kill-word
+"\e(": kill-word
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
 
