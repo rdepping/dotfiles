@@ -54,7 +54,7 @@
 	abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
-	br = branch -a
+	br = branch
 	busypeople = shortlog -6
 	busythisweek = shortlog --since=one.week.ago
 	cam = commit -a -m
