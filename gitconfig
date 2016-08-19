@@ -1,6 +1,7 @@
 [user]
 	name = Jim Lawton
-	email = jim.lawton@accenture.com
+#	email = jim.lawton@accenture.com
+	email = jim.lawton@gmail.com
 [push]
 	default = simple
 [branch]
