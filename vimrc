@@ -227,6 +227,8 @@ augroup bzip2
   autocmd FileAppendPre                 *.bz2 !mv <afile>:r <afile>
   autocmd FileAppendPost                *.bz2 !mv <afile> <afile>:r
   autocmd FileAppendPost                *.bz2 !bzip2 -9 --repetitive-best <afile>:r
+
+  autocmd FileType make setlocal noexpandtab
 augroup END
 
 autocmd FileType python set complete+=k/usr/local/pydiction isk+=.,(
