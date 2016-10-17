@@ -159,3 +159,6 @@ alias phgrep='cat ~/.persistent_history|grep --color'
 
 # Kill ssh or sshpass sessions (e.g. if VPN hangs).
 alias sshkill="ps auxww | egrep 'sshpass|ssh ' | egrep -v egrep | awk '{print \$2}' | xargs kill -9"
+
+# http://randsinrepose.com/links/2016/10/16/nesting-and-networking/
+alias netwtf='sudo /usr/local/Cellar/mtr/0.87/sbin/mtr -n 8.8.8.8'
