@@ -4,9 +4,10 @@
 [core]
 	safecrlf = warn
 	deltaBaseCacheLimit = 1G
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/ralph.depping/.gitignore
 	quotepath = false
 	editor = vim
+	pager = less -X
 [push]
 	default = simple
 [branch "master"]
@@ -57,10 +58,6 @@
 	insteadOf = "ghg://"
 	pushInsteadOf = "ghg://"
 	# Example: git clone ghg://ntschutta/emacs
-[url "git://github.com/matthewmccullough/"]
-    insteadOf = "ghgm://"
-    pushInsteadOf = "ghgm://"
-    # Example: git clone ghgm://hellogitworld
 [url "git@github.com:"]
 	insteadOf = "ghs://"
 	pushInsteadOf = "ghs://"
@@ -83,8 +80,6 @@
 [gist]
 	private = yes
 	browse = yes
-[push]
-	default = matching
 [alias]
 	abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
@@ -206,3 +201,15 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/ralph.depping/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[difftool "bc3"]
+	trustExitCode = true
+[mergetool "bc3"]
+	trustExitCode = true
+[commit]
+	template = .gitcommitmessage

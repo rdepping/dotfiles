@@ -1,15 +1,21 @@
 [identity:work]
-  name = Ralph Depping 
-  email = ralph.depping@accenture.com 
+  name = Ralph Depping
+  email = ralph.depping@accenture.com
 
 [identity:personal]
-  name = Ralph Depping 
-  email = ralph@depping.me 
+  name = Ralph Depping
+  email = ralph@depping.me
+
+[identity:libertyglobal]
+  name = Ralph Depping
+  email = rdepping.contractor@libertyglobal.com
 
 [work]
-  ~/git/cmf/*
   ~/Work/*
-
-[personal]
   ~/git/*
 
+[personal]
+  ~/git/inspec-stigs-fork
+
+[libertyglobal]
+  ~/git/libertyGlobal/*

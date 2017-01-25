@@ -101,3 +101,4 @@ fi
 # All done.
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
