@@ -39,16 +39,6 @@ export EDITOR=vi
 export PAGER=less
 export PSSH_HOSTS=~/.hosts_file
 
-# List of all machines in our desktop "cluster".
-export CLUSTER="lightning gemini saturn jalapeno blackhawk hydrogen helium lithium nitrogen neon boron beryllium carbon oxygen"
-export POWER_IP="193.120.91.113"
-export POWER_PORT=2
-export POWERCYCLE="/local/$USER/work/svn/stbtools/trunk/share/python/power.py $POWER_IP $POWER_PORT cycle"
-if [ -d /local/$USER ]; then
-    export CCACHE_DIR=/local/$USER/.ccache
-fi
-export TMOUT=0
-
 # Go.
 export GOPATH=~/go
 export GOROOT=/usr/local/opt/go
@@ -81,17 +71,6 @@ export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pythonrc
 export PRINTER=baird
 
-# Set work proxy defaults.
-#export S3_PROXY="http://193.120.90.34:3128/"
-#export S3_PROXY="http://avproxyvlan.dublin.s3group.com:8080/"
-export S3_PROXY="http://avproxylan.dublin.s3group.com:8080/"
-export S3_AUTO_PROXY="http://proxy.s3group.com/proxy.pac"
-
-# Split into host and port.
-export S3_PROXY_HOST=$(echo ${S3_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
-export S3_PROXY_PORT=$(echo ${S3_PROXY} | awk -F: '{print $3}' | sed 's:/::')
-export S3_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/8,.local,.s3group.com,192.168.249.0/24,192.168.248.0/24,193.120.88.0/24,192.168.249.25,git-mirrors,cmf-jenkins,jenkins-rdkcmf,rdkcmf-gerritmaster,protex"
-
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 # All new environments isolated from the site-packages directory.
@@ -101,5 +80,4 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 # Make pip detect an active virtualenv and install to it
 export PIP_RESPECT_VIRTUALENV=true
 # Make pip only install into a virtualenv.
-export PIP_REQUIRE_VIRTUALENV=true
-
+export PIP_REQUIRE_VIRTUALENV=false
