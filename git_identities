@@ -1,21 +1,22 @@
-[identity:work]
+[identity:accenture]
   name = Ralph Depping
   email = ralph.depping@accenture.com
 
 [identity:personal]
   name = Ralph Depping
-  email = ralph@depping.me
+  email = github@depping.me
 
 [identity:libertyglobal]
   name = Ralph Depping
   email = rdepping.contractor@libertyglobal.com
 
-[work]
-  ~/Work/*
-  ~/git/*
-
 [personal]
-  ~/git/inspec-stigs-fork
+  ~/git/personal/*
+  ~/dotfiles
 
 [libertyglobal]
   ~/git/libertyGlobal/*
+
+[accenture]
+  ~/Work/*
+  ~/git/*
