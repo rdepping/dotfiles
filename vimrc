@@ -7,6 +7,9 @@ set shell=/bin/bash
 
 set term=screen
 
+" highlight the current line
+set cursorline
+
 " turn syntax highlighting on by default
 syntax on
 filetype plugin indent on
@@ -80,7 +83,8 @@ if has("mouse_gpm") && filereadable("/usr/share/vim/syntax/syntax.vim")
 endif
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 
 "Display a status-line
 set statusline=~
