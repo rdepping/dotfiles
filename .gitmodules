@@ -58,3 +58,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "hyper-hacks"]
+	path = hyper-hacks
+	url = https://github.com/jimlawton/hyper-hacks.git
