@@ -56,3 +56,6 @@ export PATH=$PATH:$GOROOT/bin
 #    export PATH="$HOME/.cabal/bin:$PATH"
 #fi
 
+# Path setup for Brew Python.
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
