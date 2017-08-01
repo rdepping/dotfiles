@@ -31,28 +31,28 @@ export PATH=$PATH:$GOROOT/bin
 ########################################
 # Set up Git path.                     #
 ########################################
-GITPATH=/proj/STBTools/tools/git/`uname -p`
-if [ -d $GITPATH ]; then
-	GITPATH=/proj/STBTools/tools/git/`uname -p`
-	if ! echo $PATH | /bin/egrep -q "(^|:)$GITPATH/bin($|:)" ; then
-		PATH=$GITPATH/bin:$PATH
-	fi
-	export LD_LIBRARY_PATH=${GITPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
-fi
+#GITPATH=/proj/STBTools/tools/git/`uname -p`
+#if [ -d $GITPATH ]; then
+#	GITPATH=/proj/STBTools/tools/git/`uname -p`
+#	if ! echo $PATH | /bin/egrep -q "(^|:)$GITPATH/bin($|:)" ; then
+#		PATH=$GITPATH/bin:$PATH
+#	fi
+#	export LD_LIBRARY_PATH=${GITPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
+#fi
 
 ########################################
 # Set up Subversion path.              #
 ########################################
-SVNPATH=/proj/STBTools/tools/svn/`uname -p`
-if [ -d $SVNPATH ]; then
-	export PYTHONPATH=$SVNPATH/lib/svn-python
-	if ! echo $PATH | /bin/egrep -q "(^|:)$SVNPATH/bin($|:)" ; then
-		export PATH=$SVNPATH/bin:$PATH
-	fi
-	export LD_LIBRARY_PATH=${SVNPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
-fi
+#SVNPATH=/proj/STBTools/tools/svn/`uname -p`
+#if [ -d $SVNPATH ]; then
+#	export PYTHONPATH=$SVNPATH/lib/svn-python
+#	if ! echo $PATH | /bin/egrep -q "(^|:)$SVNPATH/bin($|:)" ; then
+#		export PATH=$SVNPATH/bin:$PATH
+#	fi
+#	export LD_LIBRARY_PATH=${SVNPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
+#fi
 
-if [ -d "$HOME/.cabal/bin" ]; then
-    export PATH="$HOME/.cabal/bin:$PATH"
-fi
+#if [ -d "$HOME/.cabal/bin" ]; then
+#    export PATH="$HOME/.cabal/bin:$PATH"
+#fi
 
