@@ -268,7 +268,7 @@ function log_bash_persistent_history() {
     if contains "$command_part" "$USER"; then
         return
     fi
-    for username in $_USERNAMES; do
+    for username in "$_USERNAMES"; do
         if contains "$command_part" "$username"; then
             return
         fi
