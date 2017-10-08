@@ -127,25 +127,40 @@ alias pgrep='ps auxww | grep \!* | grep -v grep'
 #alias a2ps='a2ps -r -1 -C -E -g -l120 -s2'
 alias a2ps='a2ps --landscape -1 --line-numbers=5 --pretty-print --highlight-level=heavy --chars-per-line=120 --sides=duplex --prologue=color'
 
-alias mfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \) -print \) | xargs -r egrep --color=auto -n'
-alias mnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \) -print \) | xargs -r egrep --color=auto -n -v'
-alias sfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \) -print \) | xargs -r egrep --color=auto -n'
-alias snotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \) -print \) | xargs -r egrep --color=auto -n -v'
-alias shfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \) -print \) | xargs -r egrep --color=auto -n'
-alias shnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \) -print \) | xargs -r egrep --color=auto -n -v'
-alias cfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \) -print \) | xargs -r egrep --color=auto -n'
-alias cnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \) -print \) | xargs -r egrep --color=auto -n -v'
-alias hfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[hH]" -print \) | xargs -r egrep --color=auto -n'
-alias hnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[hH]" -print \) | xargs -r egrep --color=auto -n -v'
-alias jfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.java" -print \) | xargs -r egrep --color=auto -n'
-alias jnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.java" -print \) | xargs -r egrep --color=auto -n -v'
-alias pyfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.py" -print \) | xargs -r egrep --color=auto -n'
-alias pynotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.py" -print \) | xargs -r egrep --color=auto -n -v'
-alias dfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[dD]" -print \) | xargs -r egrep --color=auto -n'
-alias dnotfind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.[dD]" -print \) | xargs -r egrep --color=auto -n -v'
-alias ofind='find . \( -name .svn -prune \) -o \( -xtype f -name "*\.o"  -print \) | xargs -r nm | egrep --color=auto -n'
-alias rstfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n'
-alias rstnotfind='find . \( -name .svn -prune \) -o \( -xtype f \( -name "*\.rst" \) -print \) | xargs -r egrep --color=auto -n -v'
+_filteredfind='find . \( -name .svn -prune \) \( -name .git -prune \) \( -name .repo -prune \)'
+_mfiles='\( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \)'
+_sfiles='\( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \)'
+_shfiles='\( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \)'
+_cfiles='\( -name "*\.[cCsS]" -o -name "*\.cc" -o -name "*\.cpp" \)'
+_hfiles='\( -name "*\.[hH]" -o -name "*\.hpp" \)'
+_jfiles='\( -name "*\.java" \)'
+_pyfiles='\( -name "*\.py" \)'
+_dfiles='\( -name "*\.[dD]" \)'
+_rstfiles='\( -name "*\.rst" \)'
+_gofiles='\( -name "*\.go" \)'
+_grepargs='xargs egrep --color=auto -n'
+
+alias mfind="$_filteredfind -o \( -type f $_mfiles -print \) | $_grepargs" 
+alias mnotfind="$_filteredfind -o \( -type f $_mfiles -print \) | $_grepargs -v" 
+alias sfind="$_filteredfind -o \( -type f $_sfiles -print \) | $_grepargs" 
+alias snotfind="$_filteredfind -o \( -type f $_sfiles -print \) | $_grepargs -v" 
+alias shfind="$_filteredfind -o \( -type f $_shfiles -print \) | $_grepargs" 
+alias shnotfind="$_filteredfind -o \( -type f $_shfiles -print \) | $_grepargs -v" 
+alias cfind="$_filteredfind -o \( -type f $_cfiles -print \) | $_grepargs" 
+alias cnotfind="$_filteredfind -o \( -type f $_cfiles -print \) | $_grepargs -v" 
+alias hfind="$_filteredfind -o \( -type f $_hfiles -print \) | $_grepargs" 
+alias hnotfind="$_filteredfind -o \( -type f $_hfiles -print \) | $_grepargs -v" 
+alias jfind="$_filteredfind -o \( -type f $_jfiles -print \) | $_grepargs" 
+alias jnotfind="$_filteredfind -o \( -type f $_jfiles -print \) | $_grepargs -v" 
+alias pyfind="$_filteredfind -o \( -type f $_pyfiles -print \) | $_grepargs" 
+alias pynotfind="$_filteredfind -o \( -type f $_pyfiles -print \) | $_grepargs -v" 
+alias dfind="$_filteredfind -o \( -type f $_dfiles -print \) | $_grepargs" 
+alias dnotfind="$_filteredfind -o \( -type f $_dfiles -print \) | $_grepargs -v" 
+alias rstfind="$_filteredfind -o \( -type f $_rstfiles -print \) | $_grepargs" 
+alias rstnotfind="$_filteredfind -o \( -type f $_rstfiles -print \) | $_grepargs -v" 
+alias gofind="$_filteredfind -o \( -type f $_gofiles -print \) | $_grepargs" 
+alias gonotfind="$_filteredfind -o \( -type f $_gofiles -print \) | $_grepargs -v" 
+
 if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 2010 ]; then
 	alias word="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app winword.exe"
 	alias excel="/opt/cxoffice/bin/wine --bottle /home/$USER/.cxoffice/Microsoft\ Office\ 2010 --cx-app excel.exe"
