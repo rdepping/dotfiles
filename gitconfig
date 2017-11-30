@@ -1,6 +1,6 @@
 [user]
 	name = Ralph Depping 
-	email = ralph.depping@accenture.com
+	email = ralph.depping@emc.com
 [core]
 	safecrlf = warn
 	deltaBaseCacheLimit = 1G
@@ -11,10 +11,10 @@
 [push]
 	default = simple
 [branch "master"]
-	rebase = true
-	autosetuprebase = true
+	rebase = false
+	autosetuprebase = never
 [branch]
-	autosetuprebase = always
+	autosetuprebase = never
 [status]
 	displaycommentprefix = false
 [rebase]

@@ -1,8 +1,6 @@
 " ########################################################################
 " # VI text editor setup
 " ########################################################################
-execute pathogen#infect()
-
 set shell=/bin/bash 
 
 set term=screen
@@ -83,8 +81,8 @@ if has("mouse_gpm") && filereadable("/usr/share/vim/syntax/syntax.vim")
 endif
 
 set background=dark
-"colorscheme solarized
-colorscheme molokai
+colorscheme solarized
+"colorscheme molokai
 
 "Display a status-line
 set statusline=~
