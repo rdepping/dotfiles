@@ -18,7 +18,7 @@
     url = git://github.com/tpope/vim-surround.git
 [submodule "scripts"]
 	path = scripts
-	url = https://github.com/jimlawton/scripts
+	url = https://github.com/rdepping/scripts
 [submodule "unison-sync"]
 	path = unison-sync
 	url = https://github.com/jimlawton/unison-sync
