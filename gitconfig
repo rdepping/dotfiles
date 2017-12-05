@@ -94,6 +94,7 @@
 	latest-branches = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 	lf = log --pretty=fuller
 	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
 	lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
 	listconf = config --global --list
