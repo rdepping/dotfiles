@@ -79,7 +79,7 @@ export EDITOR='vim'
 
 export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pythonrc
-export PRINTER=baird
+#export PRINTER=baird
 
 # Set work proxy defaults.
 #export S3_PROXY="http://193.120.90.34:3128/"
