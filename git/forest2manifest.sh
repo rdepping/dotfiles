@@ -6,7 +6,12 @@ else
     top=$1
 fi
 
-repos=`find $top -type d -name .git | xargs dirname | sort`
+gitdirs=`cd $top; find . -type d -name .git`
+repos=""
+for g in $gitdirs; do
+    repos="$repos `dirname $g`"
+done
+repos=`echo $repos | sort`
 
 remotes=""
 for repo in $repos; do
