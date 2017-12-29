@@ -15,7 +15,7 @@ repos=`echo $repos | sort`
 
 remotes=""
 for repo in $repos; do
-    url=`git config -f $repo/.git/config --get remote.origin.url`
+    url=`git config -f $top/$repo/.git/config --get remote.origin.url`
     scheme=`echo $url | sed 's;://.*;;'`
     host=`echo $url | awk -F: '{print $2}' | sed 's;//;;' | sed 's;/.*;;'`
     remote="$scheme://$host"
@@ -45,13 +45,13 @@ cat >>default.xml <<EOF
 EOF
 
 for repo in $repos; do
-    url=`git config -f $repo/.git/config --get remote.origin.url`
+    url=`git config -f $top/$repo/.git/config --get remote.origin.url`
     scheme=`echo $url | sed 's;://.*;;'`
     host=`echo $url | awk -F: '{print $2}' | sed 's;//;;' | sed 's;/.*;;'`
     remote="$scheme://$host"
     rname=`echo $remote | sed 's;.*://;;'`
     name=`echo $url | awk -F: '{print $2}' | sed 's;//;;' | sed 's;[^/]*/;;'`
-    clonepath=`echo $repo | sed "s;$(pwd)/;;"`
+    clonepath=`echo $repo | sed "s;$(pwd)/;;" | sed "s;./;;"`
     cat >>default.xml <<EOF
     <project remote="$rname" name="$name" path="$clonepath" />
 EOF
