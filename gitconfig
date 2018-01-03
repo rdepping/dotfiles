@@ -27,6 +27,7 @@
 	# diff = auto
 	# status = auto
 	# branch = auto
+
 [color "branch"]
 	#current = yellow reverse
 	#local = yellow
@@ -50,34 +51,33 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 #	autocrlf = input
+#	editor = vim
+
 [alias]
 	abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 	blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
-	br = branch
+	br = branch -a
 	busypeople = shortlog -6
 	busythisweek = shortlog --since=one.week.ago
-	cam = commit -a -m
 	c = commit
+	cam = commit -a -m
 	ci = commit
 	cl = log --stat -C -2
-	cob = checkout -b
 	co = checkout
+	cob = checkout -b
 	configpushcurrent = config push.default current
 	configpushnothing = config push.default nothing
 	configpushtracking = config push.default matching
 	configpushtracking = config push.default tracking
 	configsimplelog = config format.pretty oneline
-	dc = diff --staged
-	dcw = diff --color-words
 	d = diff --color-words
-	dh = diff HEAD
 	dc = diff --staged
-	dw = diff --word-diff
 	dcw = diff --color-words
+	dh = diff HEAD
 	dm = !git diff | mate
-	dv = !git diff | vim
 	dump = cat-file -p
+	dv = !git diff | vim
 	dw = diff --word-diff
 	empty-tree-sha1 = hash-object -t tree /dev/null
 	fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
@@ -94,8 +94,8 @@
 	latest-branches = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 	lf = log --pretty=fuller
 	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
+	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 	lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
 	listconf = config --global --list
 	listhistory = log --name-status
@@ -107,17 +107,18 @@
 	logcpy = log --stat -1 -C -C
 	logfive = log --graph --pretty=oneline --abbrev-commit --decorate --all -5
 	logit = log --stat -M
-	logme = log --author=Jim --stat -C
 	logm = log --stat -M
+	logme = log --author=Jim --stat -C
 	logn = log --oneline --name-only
-	logr2 = log --stat -M -2
 	logr = log -M
+	logr2 = log --stat -M -2
 	logsimple = log --graph --abbrev-commit --pretty=oneline --all --decorate
 	lol = log --pretty=oneline --graph --abbrev-commit --all
 	lp = log -p
 	lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
 	lsm = log -M --stat
 	lwr = log --stat -C
+    me = !git config --get user.name && git config --get user.email
 	mergekeepoursonly = merge -s ours
 	nfjsunpushed = log origin/master..master --oneline
 	noderelnotes = git log --graph --pretty=format:'%h%d %s (%an)'
@@ -130,10 +131,10 @@
 	ph = push
 	pl = pull
 	prunenow = gc --prune=now
-    pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
 	pub = push -u origin
-	purgeme = !git clean -fd && git reset --hard
+	pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
 	pur = pull --rebase
+	purgeme = !git clean -fd && git reset --hard
 	pushnotes = !sh -c 'git push $1 refs/notes/*' -
 	ready = rebase -i @{u}
 	redocommit = reset --soft HEAD^
@@ -143,29 +144,30 @@
 	ro = !git fetch origin && git reset --hard origin/master
 	rtheirs = !git checkout --theirs ./ && git add . && git rebase --continue
 	rv = remote -v
+	s = status -u -s
 	scrub = !git reset --hard && git clean -fd
 	servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
 	shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
-	showignored2 = ls-files --others --ignored --exclude-standard
 	showignored = clean -ndX
+	showignored2 = ls-files --others --ignored --exclude-standard
 	showuntracked = ls-files --others --exclude-standard
 	slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
 	sno = show --name-only
 	squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
-	s = status -u -s
+	st = status
 	standup = log --all --since yesterday --author jim.lawton@s3group.com
 	stat = status
-	st = status
 	sync = !git pull && git push
 	tagcontains = git tag -l --contains HEAD
 	tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
 	type = cat-file -t
+	url = !git info | grep ^remote | grep \\.url | awk -F= \"{print $2}\"
 	weekly = !git --no-pager log --author=\"`git config --global user.name`\" --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset'
 	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
 	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
 	who = shortlog -s --
 	wipe = reset --hard HEAD
-	url = !git info | grep ^remote | grep \\.url | awk -F= \"{print $2}\"
+
 [apply]
 	whitespace = nowarn
 [rerere]
@@ -193,6 +195,10 @@
 #	tool = Kaleidoscope
 	tool = bc3
 	bc3 = trustExitCode
+
+[branch]
+    # Automatically set up pull to be --rebase
+    #autosetuprebase = always
 
 [url "git://github.com/"]
 	insteadOf = "ghg://"
@@ -259,10 +265,12 @@ protocol = https
 [http]
 	sslVerify = false
 	postBuffer = 524288000
+
 [credential]
 	helper = osxkeychain
 
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
 	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

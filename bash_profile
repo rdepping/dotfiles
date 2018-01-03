@@ -25,6 +25,7 @@ source ~/dotfiles/bash_options
 
 # Load my Git bash prompt
 source ~/dotfiles/bash_prompt_current
+# source ~/.dotfiles/bash_gitprompt
 
 # Load Brew's git bash completion
 # source /opt/boxen/homebrew/Cellar/git/1.9.1/etc/bash_completion.d/git-completion.bash

@@ -15,9 +15,10 @@ This project contains submodules. It is suggested that you clone this into your 
 
 # Setup
 There is a set up script that establishes the symlinks in your home directory. Run this once.
-* `_setupdotfiles.sh`
+* For Bash (needs some fixes)
+        `~/dotfiles/_setupdotfiles.sh`
 
-> NOTE: Some personal configuration of Jim's will remain after setup. You should fork and tweak to your specific needs.
+> NOTE: Some of my personal configuration will remain after setup. You should fork and tweak to your specific needs.
 
 # Contributions
 Contributions are always welcome in the form of pull requests with explanatory comments.
