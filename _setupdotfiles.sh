@@ -1,6 +1,7 @@
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
 DOTFILES=".autoenv .bash_logout .bash_profile .bashrc .colordiffrc .colorgccrc .git_identities .gitconfig .gitignore .inputrc .profile .pythonrc .tmux .tmux.conf .vimrc .vim .xxdiffrc"
+DROPDIRS="bin .pip"
 MOVE=true
 SAVEDIR=~/.old
 
@@ -52,9 +53,11 @@ for dotfile in $DOTFILES; do
 	symlinkifne $dotfile
 done
 
-if [ ! -e ~/bin ]; then
-    ln -s ~/Dropbox/unixhome/bin ~
-fi
+for dropdir in $DROPDIRS; do
+    if [ ! -e ~/$dropdir ]; then
+        ln -s ~/Dropbox/unixhome/$dropdir ~/
+    fi
+done
 
 popd
 
