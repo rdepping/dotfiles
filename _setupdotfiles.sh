@@ -42,7 +42,7 @@ if [ ! -d dotfiles ]; then
 	echo "The dotfiles dir does not exist in your home directory!"
 	echo "You need to do:"
 	echo "# cd ~"
-	echo "# git clone --recurse-submodules https://github.com/matthewmccullough/dotfiles"
+	echo "# git clone --recurse-submodules https://github.com/jimlawton/dotfiles"
 	echo "# cd dotfile"
 	echo "# ./_setupdotfiles.sh"
 	exit 1
