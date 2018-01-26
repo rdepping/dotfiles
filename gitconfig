@@ -138,6 +138,7 @@
 	pushnotes = !sh -c 'git push $1 refs/notes/*' -
 	ready = rebase -i @{u}
 	redocommit = reset --soft HEAD^
+	reward = blame
 	ri = rebase --interactive --autosquash
 	rlog = log --color-words --stat -3
 	rmmissing = !git rm $(git ls-files --deleted)
