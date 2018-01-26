@@ -137,6 +137,7 @@
 	purgeme = !git clean -fd && git reset --hard
 	pushnotes = !sh -c 'git push $1 refs/notes/*' -
 	ready = rebase -i @{u}
+	recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n${1-10}; }; f"
 	redocommit = reset --soft HEAD^
 	reward = blame
 	ri = rebase --interactive --autosquash
