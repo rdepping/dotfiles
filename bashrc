@@ -6,3 +6,5 @@
 
 # Bash non-interactive shell will load the same functions as the interactive shell
 source ~/.bash_profile
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
