@@ -7,6 +7,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/dotfiles/scripts
 export PATH=$PATH:~/utils
 export PATH=$PATH:~/dotfiles/git/git-identify/bin
+export PATH=$PATH:/usr/local/bin/hoverfly
 if isMac; then
     export PATH=$PATH:/usr/local/opt/go/libexec/bin
 fi
