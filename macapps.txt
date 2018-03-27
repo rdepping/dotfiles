@@ -1,0 +1,233 @@
+/Users/jim.lawton/Library/Application Support/Juniper Networks/HostChecker.app
+/Users/jim.lawton/Library/Application Support/Google/Android File Transfer/Android File Transfer Agent.app
+/Users/jim.lawton/Library/Application Support/Java/Java 1.8.91.14/Java 8 Update 91.app
+/Users/jim.lawton/Library/Application Support/Skype.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/Add-ons/CiscoWebExUpdate.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/Add-ons/Cisco WebEx Start.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/T32_UMC_32.8.4.6/as.bundle/Contents/Resources/aswatcher.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/T32_UMC_32.8.4.6/convertpdf.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/T32_UMC_32.8.4.6/atmsupload.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/T32_UMC_32.8.4.6/Meeting Center.app
+/Users/jim.lawton/Library/Application Support/WebEx Folder/T32_UMC_32.8.4.6/asannotation2.app
+/Users/jim.lawton/Library/Application Support/Pulse Secure/SetupClient/PulseSetupClient.app
+/Users/jim.lawton/Library/Application Support/de.gtfd.application.App
+/Users/jim.lawton/Library/Application Support/PortableSSD/Samsung Portable SSD.app
+/Users/jim.lawton/Library/Application Support/PortableSSD/T3 Log In Activator for Mac.app
+/Users/jim.lawton/Library/Application Support/PortableSSD/SamsungPortableSSD.app
+/Users/jim.lawton/Library/Application Support/PortableSSD/SamsungPortableSSD.app/Contents/Resources/T3 Log In Activator for Mac.app
+/Users/jim.lawton/Library/Printers/ACN Cork.app
+/Users/jim.lawton/Library/Printers/Canon MP630 series.app
+/Users/jim.lawton/Library/PreferencePanes/MusicManager.prefPane/Contents/Helpers/MusicManagerHelper.app
+/Users/jim.lawton/Library/PreferencePanes/MusicManager.prefPane/Contents/Helpers/MusicManagerHelper.app/Contents/Frameworks/Breakpad.framework/Versions/A/Resources/crash_report_sender.app
+/Users/jim.lawton/Library/Dropbox/DropboxMacUpdate.app
+/Users/jim.lawton/Library/Containers/com.lastpass.LastPass/Data/Library/Application Support/LastPass/LastPass.app
+/Users/jim.lawton/Library/Containers/com.lastpass.LastPass/Data/Library/Application Support/LastPass/LastPassHelper.app
+/Users/jim.lawton/Library/Containers/com.fiplab.copyclip2/Data/Library/Application Support/CopyClip/CopyClip 28/CopyClip 2.app
+/Users/jim.lawton/Library/Containers/com.fiplab.copyclip2/Data/Library/Application Support/CopyClip/CopyClip 28/CopyClip 2.app/Contents/Library/LoginItems/CopyClipHelper.app
+/Users/jim.lawton/Library/Containers/com.fiplab.copyclip2/Data/Library/Application Support/CopyClip/CopyClip 28/CopyClip 2.app/Contents/Frameworks/Sparkle.framework/Versions/A/Resources/finish_installation.app
+/Users/jim.lawton/Library/XMind/configuration-cathy_macosx-R3.7.6.201711210129/org.eclipse.equinox.app
+/Users/jim.lawton/Downloads/SamsungPortableSSD.app
+/Applications/The Archive Browser.app
+/Applications/VIP Access/VIP Access Uninstaller.app
+/Applications/VIP Access/VIP Access Proximity.app
+/Applications/VIP Access/VIP Access.app
+/Applications/DVD Player.app
+/Applications/Pineapple.app
+/Applications/LastPass.app
+/Applications/CopyClip 2.app
+/Applications/Pastebot.app
+/Applications/Siri.app
+/Applications/Toolkit.app
+/Applications/TreeSheets.app
+/Applications/jEdit.app
+/Applications/OLM Extractor Pro.app
+/Applications/SourceTree.app
+/Applications/CrossOver.app
+/Applications/MusicManager.app
+/Applications/XMind.app
+/Applications/QuickTime Player.app
+/Applications/Chess.app
+/Applications/TaskPaper.app
+/Applications/Go2Shell.app
+/Applications/Photo Booth.app
+/Applications/Opera Developer.app
+/Applications/Keybase.app
+/Applications/SoftU2F.app
+/Applications/EasyMP Network Projection/Tools/EasyMP Network Projection Uninstaller.app
+/Applications/EasyMP Network Projection/EasyMP Network Projection.app
+/Applications/Docker/Kitematic (Beta).app
+/Applications/Docker/Docker Quickstart Terminal.app
+/Applications/XMind ZEN.app
+/Applications/my Accenture Mac.app
+/Applications/Amazon Drive.app
+/Applications/Junos Pulse.app
+/Applications/Notes.app
+/Applications/cool-retro-term.app
+/Applications/Speedtest.app
+/Applications/Image Capture.app
+/Applications/BeardedSpice.app
+/Applications/iBooks.app
+/Applications/Google Chrome.app
+/Applications/Karabiner-Elements.app
+/Applications/Itsycal.app
+/Applications/Karabiner-EventViewer.app
+/Applications/Numbers.app
+/Applications/Dropbox.app
+/Applications/Android File Transfer.app
+/Applications/aText.app
+/Applications/Google Photos Backup.app
+/Applications/Beyond Compare.app
+/Applications/CopyClip 2 Helper.app
+/Applications/Preview.app
+/Applications/Display Menu.app
+/Applications/Unsplash Wallpapers.app
+/Applications/Dashboard.app
+/Applications/OneDrive.app
+/Applications/Spotify.app
+/Applications/Delicious Library 3.app
+/Applications/TLA+ Toolbox.app
+/Applications/iMovie.app
+/Applications/Dash.app
+/Applications/TextEdit.app
+/Applications/Microsoft Word.app
+/Applications/Yammer.app
+/Applications/Radiant Player.app
+/Applications/Garmin BaseCamp.app
+/Applications/DeskCover.app
+/Applications/Skype for Business.app
+/Applications/Garmin MapManager.app
+/Applications/Commander One.app
+/Applications/Audacity.app
+/Applications/CopyClip.app
+/Applications/Docker.app
+/Applications/Disk Space.app
+/Applications/Plantronics Hub.app
+/Applications/GoPro Quik.app
+/Applications/Magnet.app
+/Applications/Mail.app
+/Applications/Safari.app
+/Applications/GPG Keychain.app
+/Applications/Dictionary.app
+/Applications/Contacts.app
+/Applications/iStat Mini.app
+/Applications/Bricksmith.app
+/Applications/Kindle.app
+/Applications/Microsoft Excel.app
+/Applications/my41cx.app
+/Applications/Time Machine.app
+/Applications/OpenVPN/Uninstall OpenVPN Connect.app
+/Applications/OpenVPN/OpenVPN Connect.app
+/Applications/Utilities/AirPort Utility.app
+/Applications/Utilities/Adobe AIR Uninstaller.app
+/Applications/Utilities/Adobe Flash Player Install Manager.app
+/Applications/Utilities/VoiceOver Utility.app
+/Applications/Utilities/Terminal.app
+/Applications/Utilities/Activity Monitor.app
+/Applications/Utilities/Grapher.app
+/Applications/Utilities/Audio MIDI Setup.app
+/Applications/Utilities/System Information.app
+/Applications/Utilities/Adobe AIR Application Installer.app
+/Applications/Utilities/Keychain Access.app
+/Applications/Utilities/Grab.app
+/Applications/Utilities/Migration Assistant.app
+/Applications/Utilities/Script Editor.app
+/Applications/Utilities/ColorSync Utility.app
+/Applications/Utilities/Console.app
+/Applications/Utilities/Disk Utility.app
+/Applications/Utilities/Bluetooth File Exchange.app
+/Applications/Utilities/Boot Camp Assistant.app
+/Applications/Utilities/Digital Color Meter.app
+/Applications/Font Book.app
+/Applications/FaceTime.app
+/Applications/Report Phishing.app
+/Applications/calibre.app
+/Applications/zoom.us.app
+/Applications/Symantec Solutions/Symantec Endpoint Protection.app
+/Applications/Symantec Solutions/SyLinkDrop.app
+/Applications/WhatsApp.app
+/Applications/Microsoft Outlook.app
+/Applications/GitHub Desktop.app
+/Applications/Marked 2.app
+/Applications/Wire.app
+/Applications/Keynote.app
+/Applications/Insync.app
+/Applications/Thunderbird.app
+/Applications/Cakebrew.app
+/Applications/TodoTxtMac.app
+/Applications/Wireshark.app
+/Applications/TermHere.app
+/Applications/Wolfram CDF Player.app
+/Applications/Quicksilver.app
+/Applications/FreeMind.app
+/Applications/Backup and Sync.app
+/Applications/Freeplane.app
+/Applications/Bear.app
+/Applications/Hammerspoon.app
+/Applications/Processing.app
+/Applications/LEGO Digital Designer.app
+/Applications/Maps.app
+/Applications/Mission Control.app
+/Applications/Pages.app
+/Applications/GarageBand.app
+/Applications/VirtualBox.app
+/Applications/Etcher.app
+/Applications/Enterprise Connect.app
+/Applications/Paragon NTFS for Mac 15.app
+/Applications/Stickies.app
+/Applications/Photos.app
+/Applications/Remote Desktop Connection.app
+/Applications/Messages.app
+/Applications/Flux.app
+/Applications/Lumen.app
+/Applications/The Unarchiver.app
+/Applications/Microsoft OneNote.app
+/Applications/Atom.app
+/Applications/LeoCAD.app
+/Applications/Calculator.app
+/Applications/Joplin.app
+/Applications/nvALT.app
+/Applications/kdiff3.app
+/Applications/Pulse Secure.app
+/Applications/Amazon Music.app
+/Applications/iTerm.app
+/Applications/SamsungPortableSSD.app
+/Applications/Skype.app
+/Applications/Rocket.app
+/Applications/GitKraken.app
+/Applications/Typist.app
+/Applications/iTunes.app
+/Applications/Tower.app
+/Applications/Firefox.app
+/Applications/MyWorkspace.app
+/Applications/Launchpad.app
+/Applications/GitUp.app
+/Applications/PyCharm CE.app
+/Applications/Funter.app
+/Applications/Boostnote.app
+/Applications/Slate.app
+/Applications/Wally.app
+/Applications/GoPro Studio.app
+/Applications/Reminders.app
+/Applications/App Store.app
+/Applications/Flycut.app
+/Applications/Microsoft PowerPoint.app
+/Applications/Evernote.app
+/Applications/Anaconda-Navigator.app
+/Applications/Garmin MapInstall.app
+/Applications/GTask for Desktop.app
+/Applications/Contexts.app
+/Applications/Übersicht.app
+/Applications/VIP Access.app
+/Applications/Automator.app
+/Applications/Slack.app
+/Applications/Scrivener.app
+/Applications/Twitter.app
+/Applications/Discord.app
+/Applications/Calendar.app
+/Applications/Microsoft Messenger.app
+/Applications/Battery Monitor.app
+/Applications/Garmin Express.app
+/Applications/System Preferences.app
+/Applications/nteract.app
+/Applications/Alfred 3.app
+/Applications/Sublime Text.app
