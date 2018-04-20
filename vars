@@ -79,18 +79,16 @@ export EDITOR='vim'
 
 export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pythonrc
-#export PRINTER=baird
+#export PRINTER=xxx
 
 # Set work proxy defaults.
-#export S3_PROXY="http://193.120.90.34:3128/"
-#export S3_PROXY="http://avproxyvlan.dublin.s3group.com:8080/"
-export S3_PROXY="http://avproxylan.dublin.s3group.com:8080/"
-export S3_AUTO_PROXY="http://proxy.s3group.com/proxy.pac"
+# export XXX_PROXY="http://xxx.example.com:8080/"
+# export XXX_AUTO_PROXY="http://proxy.example.com/proxy.pac"
 
 # Split into host and port.
-export S3_PROXY_HOST=$(echo ${S3_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
-export S3_PROXY_PORT=$(echo ${S3_PROXY} | awk -F: '{print $3}' | sed 's:/::')
-export S3_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/8,.local,.s3group.com,192.168.249.0/24,192.168.248.0/24,193.120.88.0/24,192.168.249.25,git-mirrors,cmf-jenkins,jenkins-rdkcmf,rdkcmf-gerritmaster,protex"
+# export XXX_PROXY_HOST=$(echo ${XXX_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
+# export XXX_PROXY_PORT=$(echo ${XXX_PROXY} | awk -F: '{print $3}' | sed 's:/::')
+# export XXX_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/8,.local"
 
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -102,4 +100,3 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 # Make pip only install into a virtualenv.
 export PIP_REQUIRE_VIRTUALENV=true
-
