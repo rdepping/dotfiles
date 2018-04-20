@@ -122,11 +122,11 @@ function checkproxy {
     for netdev in $NETDEV; do
         IP_ADDR=`/sbin/ifconfig $netdev | grep inet | grep -v inet6 | awk '{print $2}' | sed 's/addr://'`
         SUBNET=`echo ${IP_ADDR} | awk -F. '{printf("%s.%s.%s", $1, $2, $3);}'`
-        if [ "$SUBNET" == "193.120.91" -o "$SUBNET" == "192.168.91" -o "$SUBNET" == "192.168.92" -o "$SUBNET" == "192.168.93" ]; then
-            proxyon
-        else
-            proxyoff
-        fi
+        # if [ "$SUBNET" == "193.120.91" -o "$SUBNET" == "192.168.91" -o "$SUBNET" == "192.168.92" -o "$SUBNET" == "192.168.93" ]; then
+        #     proxyon
+        # else
+        #     proxyoff
+        # fi
     done
 }
 
@@ -175,9 +175,9 @@ function gnomeproxy {
 
 # Turn on proxy.
 function proxyon {
-    export http_proxy="${S3_PROXY}"
-    export https_proxy="${S3_PROXY}"
-    export no_proxy="${S3_NO_PROXY}"
+    export http_proxy="${XXX_PROXY}"
+    export https_proxy="${XXX_PROXY}"
+    export no_proxy="${XXX_NO_PROXY}"
     rm -f ~/.subversion/servers ~/.subversion/config
     if [ -f ~/.subversion/servers.proxy ]; then
         ln -sf ~/.subversion/servers.proxy ~/.subversion/servers
@@ -187,8 +187,8 @@ function proxyon {
     fi
     ~/dotfiles/sublime-text/sublime-set-proxy.py $http_proxy
     ~/dotfiles/atom/atom-set-proxy.py $https_proxy
-    #gnomeproxy "auto" "${S3_AUTO_PROXY}"
-    #gnomeproxy "manual" "${S3_PROXY_HOST}" "${S3_PROXY_PORT}"
+    #gnomeproxy "auto" "${XXX_AUTO_PROXY}"
+    #gnomeproxy "manual" "${XXX_PROXY_HOST}" "${XXX_PROXY_PORT}"
     # echo "Proxy enabled."
 }
 
