@@ -269,7 +269,7 @@ protocol = https
 	postBuffer = 524288000
 
 [credential]
-	helper = osxkeychain
+#	helper = osxkeychain
 
 [filter "lfs"]
 	required = true
