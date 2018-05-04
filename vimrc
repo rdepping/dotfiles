@@ -11,6 +11,9 @@ set shell=/bin/bash
 
 set term=screen
 
+set paste
+set number
+
 " set our tabs to four spaces
 set ts=4
 set smartindent
