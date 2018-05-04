@@ -1,6 +1,10 @@
 " ########################################################################
 " # VI text editor setup
 " ########################################################################
+
+" NOTE: make sure vim ins actually installed, and that you're not trying 
+" to run this in vi!
+
 execute pathogen#infect()
 
 set shell=/bin/bash 
