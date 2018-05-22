@@ -21,41 +21,6 @@ export PATH=$PATH:$GOROOT/bin
 #pathmunge /usr/sbin
 #pathmunge /sbin
 
-#if [ "$HOSTNAME" == "apollo" -o "$HOSTNAME" == "saturn" -o "$HOSTNAME" == "lightning" ]; then
-#    pathmunge /usr/local/bin
-#fi
-
-#export LD_LIBRARY_PATH=${PYPATH}/lib:${SVNPATH}/lib:${HOME}/lib:/usr/lib64:/lib64:${LD_LIBRARY_PATH}
-#export LD_LIBRARY_PATH=${SVNPATH}/lib:${HOME}/lib:/usr/lib64:/lib64
-
-########################################
-# Set up Git path.                     #
-########################################
-#GITPATH=/proj/STBTools/tools/git/`uname -p`
-#if [ -d $GITPATH ]; then
-#	GITPATH=/proj/STBTools/tools/git/`uname -p`
-#	if ! echo $PATH | /bin/egrep -q "(^|:)$GITPATH/bin($|:)" ; then
-#		PATH=$GITPATH/bin:$PATH
-#	fi
-#	export LD_LIBRARY_PATH=${GITPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
-#fi
-
-########################################
-# Set up Subversion path.              #
-########################################
-#SVNPATH=/proj/STBTools/tools/svn/`uname -p`
-#if [ -d $SVNPATH ]; then
-#	export PYTHONPATH=$SVNPATH/lib/svn-python
-#	if ! echo $PATH | /bin/egrep -q "(^|:)$SVNPATH/bin($|:)" ; then
-#		export PATH=$SVNPATH/bin:$PATH
-#	fi
-#	export LD_LIBRARY_PATH=${SVNPATH}/lib${LD_LIBRARY_PATH:+:}${LD_LIBRARY_PATH:-}
-#fi
-
-#if [ -d "$HOME/.cabal/bin" ]; then
-#    export PATH="$HOME/.cabal/bin:$PATH"
-#fi
-
 # Path setup for Brew Python.
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
