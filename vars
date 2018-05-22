@@ -76,15 +76,6 @@ export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pythonrc
 #export PRINTER=xxx
 
-# Set work proxy defaults.
-# export XXX_PROXY="http://xxx.example.com:8080/"
-# export XXX_AUTO_PROXY="http://proxy.example.com/proxy.pac"
-
-# Split into host and port.
-# export XXX_PROXY_HOST=$(echo ${XXX_PROXY} | awk -F: '{printf("%s:%s\n",$1,$2);}')
-# export XXX_PROXY_PORT=$(echo ${XXX_PROXY} | awk -F: '{print $3}' | sed 's:/::')
-# export XXX_NO_PROXY="localhost,127.0.0.0/8,10.0.0.0/8,.local"
-
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 # All new environments isolated from the site-packages directory.
