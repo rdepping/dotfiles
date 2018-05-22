@@ -81,26 +81,6 @@ function chext {
 }
 
 
-# Execute a command via SSH on a set of machines.
-function cluster {
-    for mach in $CLUSTER; do 
-        (echo -n "$mach: "; ssh -q $mach $*) 
-    done
-}
-
-
-# Yum update a set of hosts.
-function clupdate {
-    for mach in $CLUSTER; do 
-        echo -n "$mach: "
-        ssh -q -t $mach sudo yum update -q -y 
-        if [ $? -ne 0 ]; then 
-            break
-        fi
-    done
-}
-
-
 function tools {
     pushd . >/dev/null
     brtop

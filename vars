@@ -39,8 +39,6 @@ export EDITOR=vi
 export PAGER=less
 export PSSH_HOSTS=~/.hosts_file
 
-# List of all machines in our desktop "cluster".
-export CLUSTER="lightning gemini saturn jalapeno blackhawk hydrogen helium lithium nitrogen neon boron beryllium carbon oxygen"
 export POWER_IP="193.120.91.113"
 export POWER_PORT=2
 export POWERCYCLE="/local/$USER/work/svn/stbtools/trunk/share/python/power.py $POWER_IP $POWER_PORT cycle"
