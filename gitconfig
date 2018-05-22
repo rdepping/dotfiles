@@ -1,6 +1,5 @@
 [user]
 	name = Jim Lawton
-#	email = jim.lawton@accenture.com
 	email = jim.lawton@gmail.com
 [push]
 	default = simple
@@ -157,7 +156,7 @@
 	sno = show --name-only
 	squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
 	st = status
-	standup = log --all --since yesterday --author jim.lawton@s3group.com
+	standup = log --all --since yesterday --author jimlawton@gmail.com
 	stat = status
 	sync = !git pull && git push
 	tagcontains = git tag -l --contains HEAD
