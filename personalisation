@@ -2,8 +2,8 @@
 # User-specific configuration.
 #########################################################################
 
-export _USERNAMES="jiml jlawton jim.lawton jlawto001c jlawto001"
+export _USERNAMES="jiml jlawton jim.lawton jlawto001c jlawto001 james.lawton"
 export _NAME="Jim Lawton"
-export _EMAIL="jim.lawton@accenture.com"
+export _EMAIL="james.lawton@forcepoint.com"
 export _SHORTUSER="jim"
 export _MACHNAME="mac"
