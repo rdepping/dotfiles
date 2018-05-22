@@ -18,17 +18,3 @@ if ($?loginsh || $?command) then # switch to bash
     exec /bin/bash -c "$command"
 endif
 # go ahead, use csh
-
-########################################
-# Set up Subversion path.              #
-########################################
-if [ -d /proj/STBTools/tools/svn ]; then 
-    setenv SVNPATH /proj/STBTools/tools/svn/`uname -m`
-    setenv PATH ${SVNPATH}/bin:${PATH}
-    setenv PYTHONPATH $SVNPATH/lib/svn-python
-    if ($?LD_LIBRARY_PATH) then
-        setenv LD_LIBRARY_PATH ${SVNPATH}/lib:${LD_LIBRARY_PATH}
-    else
-        setenv LD_LIBRARY_PATH ${SVNPATH}/lib
-    endif
-fi
