@@ -39,9 +39,6 @@ export EDITOR=vi
 export PAGER=less
 export PSSH_HOSTS=~/.hosts_file
 
-export POWER_IP="193.120.91.113"
-export POWER_PORT=2
-export POWERCYCLE="/local/$USER/work/svn/stbtools/trunk/share/python/power.py $POWER_IP $POWER_PORT cycle"
 if [ -d /local/$USER ]; then
     export CCACHE_DIR=/local/$USER/.ccache
 fi
