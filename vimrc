@@ -9,7 +9,8 @@ execute pathogen#infect()
 
 set shell=/bin/bash 
 
-set term=screen
+"set term=screen
+set term=linux
 
 set paste
 " set number
@@ -32,7 +33,8 @@ set ai
 set nocompatible
 
 " turn on the "visual bell" - which is much quieter than the "audio blink"
-set vb
+set visualbell 
+set t_vb=
 
 " automatically show matching brackets. works like it does in bbedit.
 set showmatch
