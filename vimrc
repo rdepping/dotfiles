@@ -3,7 +3,8 @@
 " ########################################################################
 set shell=/bin/bash 
 
-set term=screen
+#set term=screen
+set term=linux
 
 " highlight the current line
 set cursorline
@@ -19,7 +20,8 @@ set ai
 set nocompatible
 
 " turn on the "visual bell" - which is much quieter than the "audio blink"
-set vb
+set visualbell
+set t_vb
 
 " automatically show matching brackets. works like it does in bbedit.
 set showmatch
@@ -81,8 +83,7 @@ if has("mouse_gpm") && filereadable("/usr/share/vim/syntax/syntax.vim")
 endif
 
 set background=dark
-colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
 
 "Display a status-line
 set statusline=~
