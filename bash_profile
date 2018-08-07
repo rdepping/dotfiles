@@ -113,3 +113,9 @@ if [ -e "/usr/bin/aws_completer" ]; then
     complete -C "/usr/bin/aws_completer" aws
 fi
 
+
+#OktaAWSCLI
+if [ -f "/home/jim/.okta/bash_functions" ]; then
+    . "/home/jim/.okta/bash_functions"
+fi
+
