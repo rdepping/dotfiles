@@ -62,7 +62,7 @@ brew "progress"
 brew "pyenv"
 brew "pyenv-virtualenvwrapper"
 brew "qt"
-brew "repo"
+brew "repo"                       # Failed!
 brew "rtmpdump"
 brew "rust"
 brew "sloccount"
@@ -72,14 +72,14 @@ brew "tig"
 brew "todo-txt"
 brew "wget"
 brew "mkchoi212/fac/fac"
-brew "sachaos/todoist/todoist"
+brew "sachaos/todoist/todoist"    # Failed!
 cask "cakebrew"
-cask "dockertoolbox"
+cask "docker-toolbox"              # Failed!
 cask "jedit"
 cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
-cask "virtualbox"
+cask "virtualbox"                 # Failed!
 mas "Battery Monitor", id: 836505650
 mas "Bear", id: 1091189122
 mas "CopyClip", id: 595191960
