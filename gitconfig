@@ -253,12 +253,7 @@
 
 [gh]
 protocol = https
-#[github]
-#	user = jimlawton
-#[credential]
-#	helper = osxkeychain
 
-[github]
 [github]
 	user = jimlawton
 	#token = PLACEHOLDER
@@ -268,7 +263,7 @@ protocol = https
 	postBuffer = 524288000
 
 [credential]
-#	helper = osxkeychain
+	helper = osxkeychain
 
 [filter "lfs"]
 	required = true
