@@ -1,22 +1,22 @@
+tap "d12frosted/emacs-plus"
+tap "dinkypumpkin/get_iplayer"
+tap "github/bootstrap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/dev-tools"
+tap "homebrew/services"
 tap "mkchoi212/fac", "https://github.com/mkchoi212/fac.git"
 tap "sachaos/todoist"
-tap "dinkypumpkin/get_iplayer"
-tap "homebrew/core"
-# tap "homebrew/versions"    # Deprecated?
-tap "homebrew/dev-tools"
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "d12frosted/emacs-plus"
-tap "github/bootstrap"
-tap "caskroom/cask"
 brew "a2ps"
 brew "adr-tools"
+brew "ansible"
 brew "apr"
 brew "apr-util"
 brew "atomicparsley"
-brew "autoconf"
 brew "autojump"
-brew "sqlite"
+brew "awk"
+brew "aws-okta"
 brew "awscli"
 brew "bash"
 brew "bash-completion"
@@ -24,9 +24,6 @@ brew "coreutils"
 brew "curl"
 brew "go"
 brew "diffutils"
-brew "libksba"
-brew "pth"
-# brew "dirmngr"    # Missing?
 brew "dos2unix"
 brew "xvid"
 brew "flake8"
@@ -35,16 +32,17 @@ brew "gdb"
 brew "get_iplayer"
 brew "gist"
 brew "git"
+brew "libksba"
 brew "libusb"
 brew "pinentry"
 brew "gnupg"
-brew "pkg-config"
 brew "httpie"
 brew "hub"
 brew "id3lib"
 brew "id3v2"
 brew "jq"
 brew "leptonica"
+brew "libressl"
 brew "libusb-compat"
 brew "mas"
 brew "md5sha1sum"
@@ -59,10 +57,12 @@ brew "peco"
 brew "percol"
 brew "pipenv"
 brew "progress"
+brew "pth"
 brew "pyenv"
+brew "pyenv-virtualenv"
 brew "pyenv-virtualenvwrapper"
 brew "qt"
-brew "repo"                       # Failed!
+brew "repo"
 brew "rtmpdump"
 brew "rust"
 brew "sloccount"
@@ -70,16 +70,19 @@ brew "ssh-copy-id"
 brew "tesseract"
 brew "tig"
 brew "todo-txt"
+brew "vim"
 brew "wget"
+brew "youtube-dl"
 brew "mkchoi212/fac/fac"
-brew "sachaos/todoist/todoist"    # Failed!
+brew "sachaos/todoist/todoist"
 cask "cakebrew"
-cask "docker-toolbox"              # Failed!
+cask "docker-toolbox"
 cask "jedit"
 cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
-cask "virtualbox"                 # Failed!
+cask "virtualbox"
+mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
 mas "Bear", id: 1091189122
 mas "CopyClip", id: 595191960
@@ -87,6 +90,7 @@ mas "CopyClip 2", id: 1020812363
 mas "Delicious Library 3", id: 635124250
 mas "DeskCover", id: 1257711898
 mas "Disk Space", id: 603688030
+mas "Funter", id: 1109422934
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iStat Mini", id: 927292435
@@ -107,3 +111,4 @@ mas "Twitter", id: 409789998
 mas "Typist", id: 415166115
 mas "Unsplash Wallpapers", id: 1284863847
 mas "Wire", id: 931134707
+mas "Xcode", id: 497799835
