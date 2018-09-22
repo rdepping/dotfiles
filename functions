@@ -183,3 +183,11 @@ function title {
     fi
 }
 
+gpip2(){
+   PIP_REQUIRE_VIRTUALENV="0" pip2 "$@"
+}
+
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
+}
+
