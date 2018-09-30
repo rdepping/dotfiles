@@ -54,6 +54,7 @@ brew "mplayer"
 brew "mtr"
 brew "node"
 brew "ocrad"
+brew "packer"
 brew "parallel"
 brew "patchutils"
 brew "peco"
@@ -87,6 +88,7 @@ cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
 cask "virtualbox"
+mas "24 Hour Wallpaper", id: 1226087575
 mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
 mas "Bear", id: 1091189122
