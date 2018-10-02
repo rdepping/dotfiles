@@ -2,6 +2,9 @@
     path = dotfiles/.gitconfig-work
 [includeIf "gitdir:Personal/"]
     path = dotfiles/.gitconfig-personal
+[include]
+    path = dotfiles/git-aliases
+
 [push]
 	default = simple
 [branch]
@@ -52,123 +55,6 @@
 	quotepath = false
 #	autocrlf = input
 #	editor = vim
-
-[alias]
-	abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
-	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
-	blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
-	br = branch
-	busypeople = shortlog -6
-	busythisweek = shortlog --since=one.week.ago
-	c = commit
-	cam = commit -a -m
-	ci = commit
-	cl = log --stat -C -2
-	co = checkout
-	cob = checkout -b
-	configpushcurrent = config push.default current
-	configpushnothing = config push.default nothing
-	configpushtracking = config push.default matching
-	configpushtracking = config push.default tracking
-	configsimplelog = config format.pretty oneline
-	d = diff --color-words
-	dc = diff --staged
-	dcw = diff --color-words
-	dh = diff HEAD
-	dm = !git diff | mate
-	dump = cat-file -p
-	dv = !git diff | vim
-	dw = diff --word-diff
-	empty-tree-sha1 = hash-object -t tree /dev/null
-	fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
-	fixup = "!sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
-	gc-ap = gc --aggressive --prune
-	graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-	gwcl = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	hse = log --stat -5
-	ignorechanges = update-index --assume-unchanged
-	ignored = ls-files --others --i --exclude-standard
-	k = !exec gitk --all&
-	last = log -1 HEAD
-	latest-branches = for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'
-	lf = log --pretty=fuller
-	lg = log --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgorigin = log --oneline --graph --decorate origin/master...master --left-right
-	lgp = log -p --oneline --graph --decorate --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
-	lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
-	listconf = config --global --list
-	listhistory = log --name-status
-	liststaged = diff --name-status --staged
-	listunstaged = diff --name-status
-	ll = log --stat -C -3
-	lm = log --stat -M
-	lod = log --oneline --decorate
-	logcpy = log --stat -1 -C -C
-	logfive = log --graph --pretty=oneline --abbrev-commit --decorate --all -5
-	logit = log --stat -M
-	logm = log --stat -M
-	logme = log --author=Jim --stat -C
-	logn = log --oneline --name-only
-	logr = log -M
-	logr2 = log --stat -M -2
-	logsimple = log --graph --abbrev-commit --pretty=oneline --all --decorate
-	lol = log --pretty=oneline --graph --abbrev-commit --all
-	lp = log -p
-	lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
-	lsm = log -M --stat
-	lwr = log --stat -C
-    me = !git config --get user.name && git config --get user.email
-	mergekeepoursonly = merge -s ours
-	nfjsunpushed = log origin/master..master --oneline
-	noderelnotes = git log --graph --pretty=format:'%h%d %s (%an)'
-	noticechanges = update-index --no-assume-unchanged
-	nr = "!sh -c 'git init $0'"
-	oneline ="!_() { $(test $# -eq 0 && echo xargs -L1) git log --no-walk --decorate --oneline \"$@\"; }; _"
-	orphank = !gitk --all `git reflog | cut -c1-7`&
-	orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
-	patchforthis = "!git diff -p $(git empty-tree-sha1)"
-	ph = push
-	pl = pull
-	prunenow = gc --prune=now
-	pub = push -u origin
-	pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
-	pur = pull --rebase
-	purgeme = !git clean -fd && git reset --hard
-	pushnotes = !sh -c 'git push $1 refs/notes/*' -
-	ready = rebase -i @{u}
-	recent = "!f() { git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n${1-10}; }; f"
-	redocommit = reset --soft HEAD^
-	reward = blame
-	ri = rebase --interactive --autosquash
-	rlog = log --color-words --stat -3
-	rmmissing = !git rm $(git ls-files --deleted)
-	ro = !git fetch origin && git reset --hard origin/master
-	rtheirs = !git checkout --theirs ./ && git add . && git rebase --continue
-	rv = remote -v
-	s = status -u -s
-	scrub = !git reset --hard && git clean -fd
-	servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
-	shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
-	showignored = clean -ndX
-	showignored2 = ls-files --others --ignored --exclude-standard
-	showuntracked = ls-files --others --exclude-standard
-	slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
-	sno = show --name-only
-	squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
-	st = status
-	standup = log --all --since yesterday --author jimlawton@gmail.com
-	stat = status
-	sync = !git pull && git push
-	tagcontains = git tag -l --contains HEAD
-	tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
-	type = cat-file -t
-	url = !git info | grep ^remote | grep \\.url | awk -F= \"{print $2}\"
-	weekly = !git --no-pager log --author=\"`git config --global user.name`\" --since='2 sunday ago' --until='1 sunday ago' --format='%Cgreen%ci%Creset %s%Creset'
-	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-	whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
-	who = shortlog -s --
-	wipe = reset --hard HEAD
 
 [apply]
 	whitespace = nowarn
