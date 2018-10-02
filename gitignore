@@ -15,3 +15,4 @@ thumbs.db
 .gradle
 .gradle_targets
 .gradletasknamecache
+.gitconfig-work
