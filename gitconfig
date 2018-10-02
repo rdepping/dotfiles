@@ -1,6 +1,7 @@
-[user]
-	name = Jim Lawton
-	email = jim.lawton@gmail.com
+[includeIf "gitdir:Work/"]
+    path = dotfiles/.gitconfig-work
+[includeIf "gitdir:Personal/"]
+    path = dotfiles/.gitconfig-personal
 [push]
 	default = simple
 [branch]
