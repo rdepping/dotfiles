@@ -112,7 +112,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
-# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 # Set up virtualenvwrapper.
 if [ -f /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
