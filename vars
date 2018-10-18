@@ -80,6 +80,8 @@ export PYTHONSTARTUP=~/.pythonrc
 export WORKON_HOME=$HOME/.virtualenvs
 # All new environments isolated from the site-packages directory.
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+# Specify Python to use with virtualenvwrapper.
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 # Use the same directory for virtualenvs as virtualenvwrapper.
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 # Make pip detect an active virtualenv and install to it
