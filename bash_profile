@@ -89,9 +89,6 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# added by Anaconda3 4.4.0 installer
-export PATH="/Users/jim.lawton/anaconda/bin:$PATH"
-
 # Added by terraform -install-autocomplete, modified by me.
 if [ -e "${HOME}/terraform/terraform" ]; then
     complete -C "${HOME}/terraform/terraform" terraform
