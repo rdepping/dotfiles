@@ -23,14 +23,3 @@ else
 fi
 
 export PS4='(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]}\n'
-
-#export PROMPT_COMMAND='
-#if [ -d .svn ]; then 
-#  SVNURL=$(svn info | awk "/^URL:/ {print \$2}")
-#  SVNPTH=$(svn info | awk "/^URL:/ {print \$2}" | cut -d/ -f4-)
-#  SVNREPOS=$(svn info | awk "/^Repository Root:/ {print \$3}")
-#  echo -ne "\033]0;/$SVNPTH"; echo -ne "\007"
-#else
-#  echo -ne "\033]0;${HOSTNAME%%.*}:${PWD/#$HOME/~}"; echo -ne "\007"
-#fi'
-
