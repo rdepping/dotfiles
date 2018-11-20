@@ -169,8 +169,8 @@ if [ -f /opt/cxoffice/bin/wine -a -d /home/$USER/.cxoffice/Microsoft\ Office\ 20
 fi
 
 # History search.
-alias hgrep='history|grep --color'
-alias phgrep='cat ~/.persistent_history|grep --color'
+alias hgrep='history | grep --color'
+alias phgrep='cat ~/.persistent_history | grep -v phgrep | grep --color'
 
 # Kill ssh or sshpass sessions (e.g. if VPN hangs).
 alias sshkill="ps auxww | egrep 'sshpass|ssh ' | egrep -v egrep | awk '{print \$2}' | xargs kill -9"
