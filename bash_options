@@ -9,10 +9,6 @@ shopt -s nocaseglob
 # Enable extended pattern matching.
 shopt -s extglob
 
-# When running two bash windows, allow both to write to the history, not one
-# stomping the other.
-shopt -s histappend
-
 # Keep multiline commands as one command in history.
 shopt -s cmdhist
 
@@ -28,17 +24,11 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 export HISTFILE=~/long_history
-export HISTFILESIZE=100000
-
-# No reason not to save a bunch in history
-# Takes up several more MBs of RAM now, oOOOooh
-export HISTSIZE=20000
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
 
 # Ignore dupe commands and other ones you don't care about
 export HISTIGNORE="&:[ ]*:exit:ls:pwd:[bf]g"
 
-# Old way to save history across multiple sessions.
-#export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-
-
-
+# Record timestamps
+export HISTTIMEFORMAT='%F %T '
