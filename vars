@@ -82,3 +82,7 @@ export PIP_RESPECT_VIRTUALENV=true
 # Make pip only install into a virtualenv.
 export PIP_REQUIRE_VIRTUALENV=false
 export CHROME_BIN=/usr/bin/google-chrome
+
+# AWS
+export AWS_DEFAULT_REGION=us-east-1
+export AWS_PROFILE=default
