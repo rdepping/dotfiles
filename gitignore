@@ -7,3 +7,7 @@
 
 # srclib build cache
 .srclib-cache/
+
+# intellij
+.idea/*.iml
+*.iml
