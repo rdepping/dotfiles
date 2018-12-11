@@ -8,9 +8,8 @@ export PATH=$PATH:~/dotfiles/scripts
 export PATH=$PATH:~/utils
 export PATH=$PATH:~/dotfiles/git/git-identify/bin
 export PATH=$PATH:/usr/local/bin/hoverfly
-if isMac; then
-    export PATH=$PATH:/usr/local/opt/go/libexec/bin
-fi
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/git/adr-tools/src
 
 # Path setup.
 pathmunge ${HOME}/git/adr-tools/src
@@ -21,10 +20,6 @@ pathmunge ${HOME}/git/adr-tools/src
 #pathmunge /bin
 #pathmunge /usr/sbin
 #pathmunge /sbin
-
-#if [ "$HOSTNAME" == "apollo" -o "$HOSTNAME" == "saturn" -o "$HOSTNAME" == "lightning" ]; then
-#    pathmunge /usr/local/bin
-#fi
 
 #export LD_LIBRARY_PATH=${PYPATH}/lib:${SVNPATH}/lib:${HOME}/lib:/usr/lib64:/lib64:${LD_LIBRARY_PATH}
 #export LD_LIBRARY_PATH=${SVNPATH}/lib:${HOME}/lib:/usr/lib64:/lib64
