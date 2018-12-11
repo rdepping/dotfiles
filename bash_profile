@@ -65,15 +65,6 @@ if [ "$HOSTNAME" == "apollo" ]; then
     fi
 fi
 
-# Stop Centrify. It seems to cause major hangs in bash tab completion.
-if [ "$HOSTNAME" == "apollo" ]; then
-    ps auxww | grep /usr/sbin/adclient | grep -v grep > /dev/null
-    if [ $? -eq 0 ]; then
-        echo "Stopping Centrify..."
-        sudo service centrifydc stop
-    fi
-fi
-
 # Load mingit aliases.
 source ~/dotfiles/git/mingit/.bashrc
 
@@ -98,7 +89,19 @@ elif [ -f /usr/local/etc/bash_completion ]; then
     source ~/dotfiles/go-bash-completion/go-bash-completion.bash
 fi
 
-# All done.
+# Set up aws cli completion
+if [ -f ~/.local/bin/aws_completer ]; then
+    complete -C '~/.local/bin/aws_completer' aws
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export GOPATH=~/go
+export GOROOT=/usr/lib/go-1.10/
+
+#OktaAWSCLI
+if [ -f "${HOME}/.okta/bash_functions" ]; then
+    . "${HOME}/.okta/bash_functions"
+fi
+
