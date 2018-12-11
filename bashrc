@@ -7,3 +7,5 @@
 # Bash non-interactive shell will load the same functions as the interactive shell
 source ~/.bash_profile
 . /usr/share/autojump/autojump.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
