@@ -4,7 +4,7 @@
 [core]
 	safecrlf = warn
 	deltaBaseCacheLimit = 1G
-	excludesfile = /home/ralph/.gitignore_global
+	excludesfile = ~/.gitignore
 	quotepath = false
 	editor = vim
 	pager = less -X
