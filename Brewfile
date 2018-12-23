@@ -100,6 +100,7 @@ cask "lumen"
 cask "virtualbox"
 cask "vlc"
 mas "24 Hour Wallpaper", id: 1226087575
+mas "Agenda", id: 1287445660
 mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
 mas "Bear", id: 1091189122
