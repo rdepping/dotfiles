@@ -69,7 +69,7 @@ if isLinux; then
 fi
 
 if isMac; then
-    alias redlink='greadlink'
+    alias readlink='greadlink'
 fi
 
 alias ls-l='ls -l'
