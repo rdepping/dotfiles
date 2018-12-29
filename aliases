@@ -72,6 +72,10 @@ if isMac; then
     alias readlink='greadlink'
 fi
 
+if isMac; then
+    alias get_iplayer='PATH=/usr/bin:/usr/local/bin get_iplayer'
+fi
+
 alias ls-l='ls -l'
 alias ls-lt='ls -lt'
 alias latest='ls -alt | head -20'
