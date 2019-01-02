@@ -7,9 +7,9 @@ else
 fi
 
 if [ -z "$2" ]; then
-    remote="github.com"
+    defremote="github.com"
 else
-    remote=$2
+    defremote=$2
 fi
 
 gitdirs=`cd $top; find . -type d -name .git`
@@ -31,6 +31,10 @@ for repo in $repos; do
 done
 
 remotes=`echo $remotes | sort`
+
+if [ ${#remotes[@]} -eq 1 ]; then
+    defremote="${remotes[0]}"
+fi
 
 cat >default.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
