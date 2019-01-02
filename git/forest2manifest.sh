@@ -6,6 +6,12 @@ else
     top=$1
 fi
 
+if [ -z "$2" ]; then
+    remote="github.com"
+else
+    remote=$2
+fi
+
 gitdirs=`cd $top; find . -type d -name .git`
 repos=""
 for g in $gitdirs; do
@@ -39,9 +45,7 @@ EOF
 done
 
 cat >>default.xml <<EOF
-
-    <default remote="github.com" revision="master" sync-j="2"/>
-
+    <default remote="$remote" revision="master" sync-j="2"/>
 EOF
 
 for repo in $repos; do
