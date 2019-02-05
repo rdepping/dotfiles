@@ -17,7 +17,7 @@ repos=""
 for g in $gitdirs; do
     repos="$repos `dirname $g`"
 done
-repos=`echo $repos | sort`
+repos=`echo $repos | tr ' ' '\n' | sort | tr '\n' ' '`
 
 remotes=""
 for repo in $repos; do
