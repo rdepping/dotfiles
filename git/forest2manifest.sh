@@ -12,7 +12,7 @@ else
     defremote=$2
 fi
 
-gitdirs=`cd $top; find . -type d -name .git`
+gitdirs=`cd $top; find . -type d -name .repo -prune -o -type d -name .git`
 repos=""
 for g in $gitdirs; do
     repos="$repos `dirname $g`"
