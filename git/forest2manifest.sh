@@ -34,6 +34,7 @@ remotes=`echo $remotes | sort`
 
 if [ ${#remotes[@]} -eq 1 ]; then
     defremote="${remotes[0]}"
+    defremote=`echo $defremote | awk -F: '{print $2}' | sed 's;//;;' | sed 's;[^/]*/;;'`
 fi
 
 cat >default.xml <<EOF
