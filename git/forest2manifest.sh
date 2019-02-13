@@ -1,18 +1,32 @@
 #!/bin/bash
 
+# Script to walk a tree of Git clones and build an XML manifest
+# for use with the git-repo tool.
+#
+# Parameters (all optional):
+#  1: path to manifest file to write (default: ./default.xml).
+#  2: path to the root of the Git clone tree (default: current directory).
+#  3: default Git remote for the repo manifest (default: first found in the tree of Git clones).
+
 if [ -z "$1" ]; then
-    top=`pwd`
+    mfile="default.xml"
 else
-    top=$1
+    mfile=$1
 fi
 
 if [ -z "$2" ]; then
-    defremote="github.com"
+    top=`pwd`
 else
-    defremote=$2
+    top=$2
 fi
 
-gitdirs=`cd $top; find . -type d -name .repo -prune -o -type d -name .git`
+if [ -z "$3" ]; then
+    defremote="github.com"
+else
+    defremote=$3
+fi
+
+gitdirs=`cd $top; find . -not -path \*/.repo/\* -type d -name .git`
 repos=""
 for g in $gitdirs; do
     repos="$repos `dirname $g`"
@@ -37,19 +51,19 @@ if [ ${#remotes[@]} -eq 1 ]; then
     defremote=`echo $defremote | awk -F: '{print $2}' | sed 's;//;;' | sed 's;[^/]*/;;'`
 fi
 
-cat >default.xml <<EOF
+cat >$mfile <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 EOF
 
 for remote in $remotes; do
     rname=`echo $remote | sed 's;.*://;;'`
-    cat >>default.xml <<EOF
+    cat >>$mfile <<EOF
     <remote name="$rname" fetch="$remote" />
 EOF
 done
 
-cat >>default.xml <<EOF
+cat >>$mfile <<EOF
     <default remote="$remote" revision="master" sync-j="2"/>
 EOF
 
@@ -61,12 +75,12 @@ for repo in $repos; do
     rname=`echo $remote | sed 's;.*://;;'`
     name=`echo $url | awk -F: '{print $2}' | sed 's;//;;' | sed 's;[^/]*/;;'`
     clonepath=`echo $repo | sed "s;$(pwd)/;;" | sed "s;./;;"`
-    cat >>default.xml <<EOF
+    cat >>$mfile <<EOF
     <project remote="$rname" name="$name" path="$clonepath" />
 EOF
 done
 
-cat >>default.xml <<EOF
+cat >>$mfile <<EOF
 </manifest>
 EOF
 
