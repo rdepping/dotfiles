@@ -8,3 +8,5 @@
 source ~/.bash_profile
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/terraform/current/terraform ] && complete -C ~/terraform/current/terraform terraform
