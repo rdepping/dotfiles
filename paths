@@ -10,6 +10,8 @@ export PATH=$PATH:~/dotfiles/git/git-identify/bin
 export PATH=$PATH:/usr/local/bin/hoverfly
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/git/adr-tools/src
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # Path setup.
 pathmunge ${HOME}/git/adr-tools/src
