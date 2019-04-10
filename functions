@@ -338,3 +338,7 @@ function title {
     fi
 }
 
+function restoreclip {
+    killall VBoxClient
+    VBoxClient --clipboard
+}
