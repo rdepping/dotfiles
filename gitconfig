@@ -7,9 +7,9 @@
 	excludesfile = ~/.gitignore
 	quotepath = false
 	editor = vim
-	pager = less -X
+	pager = cat
 [push]
-	default = simple
+	default = upstream
 [branch "master"]
 	rebase = false
 	autosetuprebase = never
