@@ -3,7 +3,10 @@
 ########################################################################
 # Bash Interactive Shell Setup
 ########################################################################
-
+# jfrog artifactory creds sourced from conf file
+export ARTIFACTORY_EMAIL=`jq -r '.artifactory[0].user' ~/.jfrog/jfrog-cli.conf`
+export ARTIFACTORY_AUTH=`jq -r '.artifactory[0].password' ~/.jfrog/jfrog-cli.conf`
+export ARTIFACTORY_API_KEY=$ARTIFACTORY_AUTH
 
 # Load paths and environment variables
 source ~/dotfiles/vars
@@ -53,18 +56,6 @@ fi
 
 checkproxy
 
-# Unison sync script...
-# Only run on the client host, and only if interactive.
-if [ "$HOSTNAME" == "apollo" ]; then
-    echo $- | grep -q i
-    if [ $? -eq 0 ]; then
-        sync_proc_count=`ps auxww | grep unison-sync.py | grep -vc grep`
-        if [ $sync_proc_count -eq 0 ]; then
-            python ${HOME}/dotfiles/unison-sync/unison-sync.py >${HOME}/.unison_sync/unison_sync.log 2>&1 &
-        fi
-    fi
-fi
-
 # Load mingit aliases.
 source ~/dotfiles/git/mingit/.bashrc
 
@@ -104,4 +95,3 @@ export GOROOT=/usr/lib/go-1.10/
 if [ -f "${HOME}/.okta/bash_functions" ]; then
     . "${HOME}/.okta/bash_functions"
 fi
-
