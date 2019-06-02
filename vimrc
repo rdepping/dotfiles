@@ -36,6 +36,9 @@ set nocompatible
 set visualbell 
 set t_vb=
 
+" disable screen restoring
+set t_ti= t_te=
+
 " automatically show matching brackets. works like it does in bbedit.
 set showmatch
 
