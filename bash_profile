@@ -95,11 +95,6 @@ if [ -e "/usr/bin/aws_completer" ]; then
     complete -C "/usr/bin/aws_completer" aws
 fi
 
-#OktaAWSCLI
-if [ -f "/home/jim/.okta/bash_functions" ]; then
-    . "/home/jim/.okta/bash_functions"
-fi
-
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
@@ -117,3 +112,10 @@ else
     echo "WARNING: Can't find virtualenvwrapper.sh"
 fi
 
+#OktaAWSCLI
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
+fi
