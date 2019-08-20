@@ -73,6 +73,8 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+Plugin 'zxqfl/tabnine-vim'
+
 filetype plugin indent on     " required!
 
 "let g:syntastic_enable_signs=1
