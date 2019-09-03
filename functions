@@ -10,8 +10,8 @@ function killxscreensaver()
 }
 
 
-function col { 
-    awk '{print $'$(echo $* | sed -e 's/ /,$/g')'}'; 
+function col {
+    awk '{print $'$(echo $* | sed -e 's/ /,$/g')'}';
 }
 
 
@@ -37,7 +37,7 @@ function pathmunge {
 #
 # Usage .. [n]
 # Go up n-levels.
-# i.e.: .. 3 will go up 3 levels 
+# i.e.: .. 3 will go up 3 levels
 function .. {
 	local arg=${1:-1};
 	local dir=""
@@ -51,7 +51,7 @@ function .. {
 # Usage ... Thing/Some
 # Go up until you encounter Thing/Some, then go there
 # i.e.: I'm in /usr/share/X11
-# ... src will go up to /usr, then change to /usr/src 
+# ... src will go up to /usr, then change to /usr/src
 function ... {
 	if [ -z "$1" ]; then
 		return
@@ -61,7 +61,7 @@ function ... {
 	while [ $maxlvl -gt 0 ]; do
 		dir="../$dir"
 		maxlvl=$(($maxlvl - 1));
-		if [ -d "$dir" ]; then 
+		if [ -d "$dir" ]; then
 			cd $dir >&/dev/null
 		fi
 	done
@@ -83,18 +83,18 @@ function chext {
 
 # Execute a command via SSH on a set of machines.
 function cluster {
-    for mach in $CLUSTER; do 
-        (echo -n "$mach: "; ssh -q $mach $*) 
+    for mach in $CLUSTER; do
+        (echo -n "$mach: "; ssh -q $mach $*)
     done
 }
 
 
 # Yum update a set of hosts.
 function clupdate {
-    for mach in $CLUSTER; do 
+    for mach in $CLUSTER; do
         echo -n "$mach: "
-        ssh -q -t $mach sudo yum update -q -y 
-        if [ $? -ne 0 ]; then 
+        ssh -q -t $mach sudo yum update -q -y
+        if [ $? -ne 0 ]; then
             break
         fi
     done
@@ -132,7 +132,7 @@ function checkproxy {
 
 
 # Gnome: set proxy.
-# Args: 
+# Args:
 # 1: mode - 'none', 'manual', 'auto'.
 # 2: mode=none: ignored
 #    mode=manual: host
@@ -230,7 +230,7 @@ function proxy {
 
 
 # Create a new git repo with one README commit and cd into it
-function git.nr() { 
+function git.nr() {
 	mkdir $1
 	cd $1
 	git init
@@ -283,7 +283,7 @@ function log_bash_persistent_history() {
 # gitignore.io
 # http://www.gitignore.io/cli
 function gi() {
-    curl http://www.gitignore.io/api/$@ ; 
+    curl http://www.gitignore.io/api/$@ ;
 }
 
 # CMF Git wrapper
@@ -341,4 +341,18 @@ function title {
 function restoreclip {
     killall VBoxClient
     VBoxClient --clipboard
+}
+
+function printValue()
+{
+  section="$1"
+  param="$2"
+  found=false
+  while read line
+  do
+    [[ $found == false && "$line" != "[$section]" ]] &&  continue
+    [[ $found == true && "${line:0:1}" = '[' ]] && break
+    found=true
+    [[ "${line% = *}" == "$param" ]] && { echo "${line#*= }"; break; }
+  done
 }
