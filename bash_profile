@@ -45,6 +45,20 @@ if [ -f ~/.aws/credentials ]; then
     export AWS_REGION=${AWS_DEFAULT_REGION}
 fi
 
+ets_env_file=~/cpt/edge-transform-service/sample.env
+if [ -f "$ets_env_file" ]; then
+    mv -f ${ets_env_file} ${ets_env_file}.old
+    echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> ${ets_env_file}
+    echo AWS_DEFAULT_REGION=${AWS_REGION} >> ${ets_env_file}
+    echo AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN} >> ${ets_env_file}
+    echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> ${ets_env_file}
+    echo AWS_REGION=${AWS_REGION} >> ${ets_env_file}
+    echo BRANCH=feature/SOME_BANCH_NAME >> ${ets_env_file}
+    echo ENV=INT >> ${ets_env_file}
+    echo ARTIFACTORY_EMAIL=${ARTIFACTORY_EMAIL} >> ${ets_env_file}
+    echo ARTIFACTORY_API_KEY=${ARTIFACTORY_API_KEY} >> ${ets_env_file}
+fi
+
 # Set up autoenv
 #source ~/.autoenv/activate.sh
 
