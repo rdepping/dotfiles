@@ -132,14 +132,17 @@ function log_bash_persistent_history() {
     local date_part="${BASH_REMATCH[1]}"
     local command_part="${BASH_REMATCH[2]}"
     # Try to skip usernames/passwords.
-    if contains "$command_part" "$USER"; then
+    if [[ $command_part == *"$USER"* ]]; then
         return
     fi
-    if contains "$command_part" "API_KEY"; then
+    if [[ $command_part == *"API_KEY"* ]]; then
+        return
+    fi
+    if [[ $command_part == *"PASSWORD"* ]]; then
         return
     fi
     for username in "$_USERNAMES"; do
-        if contains "$command_part" "$username"; then
+        if [[ $command_part == *"$username"* ]]; then
             return
         fi
     done
