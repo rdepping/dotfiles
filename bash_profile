@@ -86,8 +86,12 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # Added by terraform -install-autocomplete, modified by me.
-if [ -e "${HOME}/terraform/terraform" ]; then
-    complete -C "${HOME}/terraform/terraform" terraform
+if [ -f "${HOME}/terraform/current/terraform" ]; then
+    complete -C "${HOME}/terraform/current/terraform" terraform
+fi
+
+if [ -f "${HOME}/.fzf.bash" ]; then
+    source "${HOME}/.fzf.bash"
 fi
 
 # AWS CLI completion.
