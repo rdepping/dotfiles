@@ -99,6 +99,13 @@ if [ -e "/usr/bin/aws_completer" ]; then
     complete -C "/usr/bin/aws_completer" aws
 fi
 
+# Docker command completion.
+if isMac; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
+fi
+
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
