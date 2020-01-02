@@ -172,7 +172,9 @@ mas "CopyClip", id: 1020812363
 mas "Delicious Library", id: 635124250
 mas "DeskCover", id: 1257711898
 mas "Disk Space", id: 603688030
+mas "Elisi", id: 1406239881
 mas "EtreCheck", id: 1423715984
+mas "feedly", id: 865500966
 mas "Funter", id: 1109422934
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
