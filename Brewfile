@@ -19,18 +19,19 @@ brew "python"
 brew "ansible"
 brew "apr"
 brew "apr-util"
+brew "asciinema"
 brew "atomicparsley"
 brew "autojump"
 brew "awk"
 brew "node"
 brew "aws-cdk"
 brew "aws-okta"
-brew "openssl"
 brew "aws-shell"
 brew "awscli"
 brew "bash"
 brew "bash-completion"
 brew "black"
+brew "brew-cask-completion"
 brew "freetype"
 brew "gettext"
 brew "cairo"
@@ -41,9 +42,13 @@ brew "curl"
 brew "go"
 brew "dep"
 brew "diffutils"
+brew "docker-completion"
+brew "docker-compose-completion"
+brew "docker-machine-completion"
 brew "dos2unix"
 brew "envconsul"
 brew "fribidi"
+brew "giflib"
 brew "libidn2"
 brew "unbound"
 brew "gnutls"
@@ -68,7 +73,10 @@ brew "libksba"
 brew "libusb"
 brew "pinentry"
 brew "gnupg"
+brew "netpbm"
+brew "gts"
 brew "graphviz"
+brew "grunt-completion"
 brew "httpie"
 brew "hub"
 brew "id3lib"
@@ -79,6 +87,7 @@ brew "ipython"
 brew "jfrog-cli-go"
 brew "oniguruma"
 brew "jq"
+brew "pandoc"
 brew "jupyterlab"
 brew "lastpass-cli"
 brew "libcaca"
@@ -97,10 +106,12 @@ brew "mypy"
 brew "ocrad"
 brew "openapi-generator"
 brew "packer"
+brew "packer-completion"
 brew "parallel"
 brew "patchutils"
 brew "peco"
 brew "percol"
+brew "pip-completion"
 brew "pipenv"
 brew "plantuml"
 brew "pre-commit"
@@ -112,6 +123,7 @@ brew "pyenv-virtualenv"
 brew "pyenv-virtualenvwrapper"
 brew "python@2"
 brew "qt"
+brew "rake-completion"
 brew "repo"
 brew "ruby"
 brew "rust"
@@ -123,6 +135,7 @@ brew "terminal-notifier"
 brew "terraform-docs"
 brew "tig"
 brew "todo-txt"
+brew "vagrant-completion"
 brew "vault"
 brew "vault-cli"
 brew "vim"
@@ -136,6 +149,8 @@ brew "sachaos/todoist/todoist"
 cask "aws-vault"
 cask "cakebrew"
 cask "docker-toolbox"
+cask "emacs"
+cask "inspec"
 cask "java"
 cask "jedit"
 cask "jupyter-notebook-ql"
@@ -143,11 +158,12 @@ cask "kdiff3"
 cask "lumen"
 cask "mactex"
 cask "meld"
+cask "openconnect-gui"
 cask "staruml"
 cask "virtualbox"
 cask "vlc"
-cask "chef/chef/inspec"
 mas "24 Hour Wallpaper", id: 1226087575
+mas "AdBlock", id: 1402042596
 mas "Agenda", id: 1287445660
 mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
@@ -156,27 +172,28 @@ mas "CopyClip", id: 1020812363
 mas "Delicious Library", id: 635124250
 mas "DeskCover", id: 1257711898
 mas "Disk Space", id: 603688030
+mas "EtreCheck", id: 1423715984
 mas "Funter", id: 1109422934
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iStat Mini", id: 927292435
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
-mas "LastPass", id: 926036361
 mas "Magnet", id: 441258766
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "my41cx", id: 949272407
 mas "Numbers", id: 409203825
+mas "Okta Extension App", id: 1439967473
 mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
 mas "SubEthaEdit", id: 728530824
-mas "TermHere", id: 1114363220
 mas "The Archive Browser", id: 510232205
 mas "The Unarchiver", id: 425424353
 mas "Twitter", id: 409789998
