@@ -164,6 +164,8 @@ cask "mactex"
 cask "meld"
 cask "openconnect-gui"
 cask "staruml"
+cask "sublime-merge-dev"
+cask "sublime-text-dev"
 cask "virtualbox"
 cask "vlc"
 mas "24 Hour Wallpaper", id: 1226087575
