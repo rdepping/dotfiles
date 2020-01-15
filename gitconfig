@@ -17,8 +17,6 @@
 	displaycommentprefix = false
 [rebase]
 	stat = true
-[hub]
-	protocol = https
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -115,11 +113,6 @@
 
 [difftool "p4merge"]
 	cmd = \"/Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE\"
-[http]
-	# proxy=http://something
-
-[hub]
-	protocol = https
 [gist]
 	private = yes
 	browse = yes
