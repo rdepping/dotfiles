@@ -184,3 +184,9 @@ alias netwtf='sudo /usr/local/Cellar/mtr/0.87/sbin/mtr -n 8.8.8.8'
 
 # OSX gatekeeper disable...
 alias gatekeeper='sudo xattr -d com.apple.quarantine'
+
+if isMac; then
+    # On Mac OSX, uuidgen produces uppercase.
+    alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+fi
+
