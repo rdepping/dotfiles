@@ -10,6 +10,7 @@
 	pager = cat
 [push]
 	default = upstream
+	recurseSubmodules = check
 [branch "master"]
 	rebase = false
 	autosetuprebase = never

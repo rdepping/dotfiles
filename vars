@@ -39,10 +39,6 @@ export EDITOR=vi
 export PAGER=less
 export PSSH_HOSTS=~/.hosts_file
 
-# Go.
-export GOPATH=~/go
-export GOROOT=/usr/local/opt/go
-
 # Manpages colour schemes.
 # Mostly magenta...
 #export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
@@ -88,4 +84,4 @@ export AWS_DEFAULT_REGION=us-east-1
 export AWS_PROFILE=default
 
 # JAVA
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/default-java

@@ -36,27 +36,29 @@ if [ -f ~/.jfrog/jfrog-cli.conf ]; then
     export ARTIFACTORY_EMAIL=`jq -r '.artifactory[0].user' ~/.jfrog/jfrog-cli.conf`
     export ARTIFACTORY_AUTH=`jq -r '.artifactory[0].password' ~/.jfrog/jfrog-cli.conf`
     export ARTIFACTORY_API_KEY=$ARTIFACTORY_AUTH
+    export ARTIFACTORY_PSW=$ARTIFACTORY_AUTH
+    export ARTIFACTORY_USR=$ARTIFACTORY_EMAIL
 fi
 
-if [ -f ~/.aws/credentials ]; then
-    export AWS_ACCESS_KEY_ID=$(printValue default aws_access_key_id < ~/.aws/credentials)
-    export AWS_SECRET_ACCESS_KEY=$(printValue default aws_secret_access_key < ~/.aws/credentials)
-    export AWS_SESSION_TOKEN=$(printValue default aws_session_token < ~/.aws/credentials)
-    export AWS_REGION=${AWS_DEFAULT_REGION}
-fi
+#if [ -f ~/.aws/credentials ]; then
+#    export AWS_ACCESS_KEY_ID=$(printValue default aws_access_key_id < ~/.aws/credentials)
+#    export AWS_SECRET_ACCESS_KEY=$(printValue default aws_secret_access_key < ~/.aws/credentials)
+#    export AWS_SESSION_TOKEN=$(printValue default aws_session_token < ~/.aws/credentials)
+#    export AWS_REGION=${AWS_DEFAULT_REGION}
+#fi
 
-ets_env_file=~/cpt/edge-transform-service/sample.env
-if [ -f "$ets_env_file" ]; then
-    mv -f ${ets_env_file} ${ets_env_file}.old
-    echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> ${ets_env_file}
-    echo AWS_DEFAULT_REGION=${AWS_REGION} >> ${ets_env_file}
-    echo AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN} >> ${ets_env_file}
-    echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> ${ets_env_file}
-    echo AWS_REGION=${AWS_REGION} >> ${ets_env_file}
-    echo BRANCH=feature/SOME_BANCH_NAME >> ${ets_env_file}
-    echo ENV=INT >> ${ets_env_file}
-    echo ARTIFACTORY_EMAIL=${ARTIFACTORY_EMAIL} >> ${ets_env_file}
-    echo ARTIFACTORY_API_KEY=${ARTIFACTORY_API_KEY} >> ${ets_env_file}
+pmb_env_file=~/cpt/polaris-message-bus/.env
+if [ -f "$pmb_env_file" ]; then
+    mv -f ${pmb_env_file} ${pmb_env_file}.old
+    echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> ${pmb_env_file}
+    echo AWS_DEFAULT_REGION=${AWS_REGION} >> ${pmb_env_file}
+    echo AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN} >> ${pmb_env_file}
+    echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> ${pmb_env_file}
+    echo AWS_REGION=${AWS_REGION} >> ${pmb_env_file}
+    echo BRANCH=feature/SOME_BANCH_NAME >> ${pmb_env_file}
+    echo ENV=DEV >> ${pmb_env_file}
+    echo ARTIFACTORY_EMAIL=${ARTIFACTORY_EMAIL} >> ${pmb_env_file}
+    echo ARTIFACTORY_API_KEY=${ARTIFACTORY_API_KEY} >> ${pmb_env_file}
 fi
 
 # Set up autoenv
@@ -112,10 +114,10 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export GOPATH=~/go
-export GOROOT=/usr/lib/go-1.10/
-
 #OktaAWSCLI
-if [ -f "${HOME}/.okta/bash_functions" ]; then
-    . "${HOME}/.okta/bash_functions"
+if [[ -f "$HOME/.okta/bash_functions" ]]; then
+    . "$HOME/.okta/bash_functions"
+fi
+if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
+    PATH="$HOME/.okta/bin:$PATH"
 fi
