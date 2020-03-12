@@ -6,7 +6,10 @@
 
 #########################################
 # Commands to run apps
-
+alias tf11_13='~/Downloads/terraform_11_13/terraform_0.11.13_linux_amd64/terraform'
+alias tf11_11='~/Downloads/terraform_11_11/terraform'
+alias tf12_24='~/Downloads/terraform_12_24/terraform'
+alias terraform12='~/Downloads/terraform_12_24/terraform'
 
 #########################################
 # Commands to change dirs
@@ -15,7 +18,6 @@ alias to.dropbox='cd ~/Dropbox'
 alias to.desktop='cd ~/Desktop'
 alias to.docs='cd ~/Documents'
 alias to.git='cd ~/git'
-
 
 #################################
 # Simple Program Name Shortening
@@ -104,16 +106,6 @@ alias mv='mv -i'
 
 alias now='date +"%Y%m%d-%H%M%S"'
 alias minicom='minicom -C minicom-`now`.log'
-
-#alias svnst='svn st --ignore-externals'
-#alias svnup='svn up --ignore-externals'
-
-alias svnrepos='export REPOS=$(~/utils/svnrepos -r) ; echo $REPOS'
-alias svnurl='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
-alias svndot='svn info | awk "/^URL:/ {print}" | sed "s/^URL: //"'
-alias svndotdot='svn info .. | awk '\''/^URL:/ {print}'\'' | sed '\''s/^URL: //'\'''
-
-alias svndiff='svn diff --diff-cmd=xx-diff-proxy'
 
 # shortcuts for doing process stuff
 alias pgrep='ps auxww | grep \!* | grep -v grep'

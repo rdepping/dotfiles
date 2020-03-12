@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Shell Functions.
+source ~/dotfiles/scripts/aws-profile-for-bashrc.sh
 
 function killxscreensaver()
 {
@@ -272,6 +273,9 @@ function log_bash_persistent_history() {
         return
     fi
     if contains "$command_part" "ralphd"; then
+        return
+    fi
+    if contains "$command_part" "ralph.depping"; then
         return
     fi
     if [ "$command_part" != "$PERSISTENT_HISTORY_LAST" ]; then

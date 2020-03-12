@@ -1,0 +1,8 @@
+source ~/dotfiles/functions
+if [ -f ~/.aws/credentials ]; then
+    export AWS_PROFILE=$1
+    export AWS_ACCESS_KEY_ID=$(printValue $1 aws_access_key_id < ~/.aws/credentials)
+    export AWS_SECRET_ACCESS_KEY=$(printValue $1 aws_secret_access_key < ~/.aws/credentials)
+    export AWS_SESSION_TOKEN=$(printValue $1 aws_session_token < ~/.aws/credentials)
+    export AWS_REGION=${AWS_DEFAULT_REGION}
+fi
