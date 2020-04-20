@@ -27,11 +27,10 @@ export HISTCONTROL=ignoreboth
 # Store a lot of history entries in a file for grep-age
 shopt -s histappend
 
-if [ -z "${ITERM_SESSION_ID}" ]; then
-    export HISTFILE=~/long_history
-else
-    export HISTFILE=~/long-history-${ITERM_SESSION_ID} 
-fi
+export HISTFILE=~/long_history
+#if [ ! -z "${ITERM_SESSION_ID}" ]; then
+#    export HISTFILE=~/long-history-${ITERM_SESSION_ID} 
+#fi
 export HISTFILESIZE=100000
 
 # No reason not to save a bunch in history
