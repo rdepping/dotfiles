@@ -34,7 +34,7 @@ brew "black"
 brew "brew-cask-completion"
 brew "freetype"
 brew "gettext"
-brew "python"
+brew "libffi"
 brew "cairo"
 brew "consul"
 brew "consul-template"
@@ -48,6 +48,7 @@ brew "docker-compose-completion"
 brew "docker-machine-completion"
 brew "dos2unix"
 brew "libidn2"
+brew "p11-kit"
 brew "unbound"
 brew "gnutls"
 brew "envconsul"
@@ -76,6 +77,7 @@ brew "libusb"
 brew "pinentry"
 brew "gnupg"
 brew "netpbm"
+brew "python"
 brew "gts"
 brew "graphviz"
 brew "grunt-completion"
@@ -133,7 +135,8 @@ brew "rust"
 brew "shellcheck"
 brew "sloccount"
 brew "sphinx-doc"
-brew "ssh-copy-id"
+brew "ssh-copy-id", link: true
+brew "sshuttle"
 brew "terminal-notifier"
 brew "terraform-docs"
 brew "tig"
@@ -197,6 +200,7 @@ mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "my41cx", id: 949272407
+mas "Notability", id: 736189492
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
 mas "OneDrive", id: 823766827
