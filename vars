@@ -79,7 +79,7 @@ export PYTHONSTARTUP=~/.pythonrc
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 # All new environments isolated from the site-packages directory.
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+#export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 # Specify Python to use with virtualenvwrapper.
 # export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 # Use the same directory for virtualenvs as virtualenvwrapper.
