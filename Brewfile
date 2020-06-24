@@ -109,6 +109,7 @@ brew "mtr"
 brew "mypy"
 brew "ocrad"
 brew "openapi-generator"
+brew "openconnect"
 brew "packer"
 brew "packer-completion"
 brew "parallel"
@@ -217,4 +218,3 @@ mas "Typist", id: 415166115
 mas "Unsplash Wallpapers", id: 1284863847
 mas "WhatsApp", id: 1147396723
 mas "Wire", id: 931134707
-mas "Xcode", id: 497799835
