@@ -151,3 +151,10 @@ alias tf='terraform'
 
 # Java apps alias
 alias plantuml='java -jar /usr/share/java/plantuml.jar'
+
+# Okta
+alias oktai="echo 'okta:cpt:integration' && withokta logout integration && OKTA_AWS_ROLE_TO_ASSUME=arn:aws:iam::392305569093:role/DEVELOPER okta-aws integration sts get-caller-identity"
+alias oktaio="echo 'okta:cpt:integration' && withokta logout integration && OKTA_AWS_ROLE_TO_ASSUME=arn:aws:iam::392305569093:role/OWNER okta-aws integration sts get-caller-identity"
+alias oktad="echo 'okta:cpt:dev' && withokta logout default && OKTA_AWS_ROLE_TO_ASSUME=arn:aws:iam::365761988620:role/DEVELOPER okta-aws default sts get-caller-identity"
+alias oktas="echo 'okta:cpt:staging' && withokta logout staging && OKTA_STS_DURATION=3600 OKTA_AWS_ROLE_TO_ASSUME=arn:aws:iam::609587181099:role/READONLY okta-aws staging sts get-caller-identity"
+alias oktadaily="oktad && oktai"
