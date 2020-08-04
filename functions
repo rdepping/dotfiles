@@ -193,7 +193,19 @@ function title() {
         # This shows the path from ~ in the title.
         #echo -ne "\033]0;${PWD/#$HOME/~}\007"
         # This shows the last part of the path in the title.
-        echo -ne "\033]0;${PWD##*/}\007"
+        #echo -ne "\033]0;${PWD##*/}\007"
+
+        # This shows the current git repo, or directory, in the title.
+        if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+            local directory
+            echo -ne "\033];${PWD##*/}\007"
+        else
+            local branch
+            local branchdir
+            branchdir=$(basename "$(git rev-parse --show-toplevel)")
+            branch=$(git branch 2>/dev/null | grep -e '\* ' | sed "s/^..\(.*\)/{\1}/")
+            echo -ne "\033];$branchdir $branch\007"
+        fi
     fi
 }
 
