@@ -204,7 +204,7 @@ function title() {
             local branchdir
             branchdir=$(basename "$(git rev-parse --show-toplevel)")
             branch=$(git branch 2>/dev/null | grep -e '\* ' | sed "s/^..\(.*\)/{\1}/")
-            echo -ne "\033];$branchdir $branch\007"
+            echo -ne "\033];[$branchdir] ${PWD##*/} $branch\007"
         fi
     fi
 }
