@@ -2,27 +2,23 @@
 
 # Shell Functions.
 
-function killxscreensaver()
-{
+function killxscreensaver() {
     pkill xscreensaver
     echo ""
     return
 }
 
-
-function col {
+function col() {
     awk '{print $'$(echo $* | sed -e 's/ /,$/g')'}';
 }
 
-
 # Awk calculator.
-function calc {
+function calc() {
     awk "BEGIN { print $* }" ;
 }
 
-
 # Add a path to the global PATH.
-function pathmunge {
+function pathmunge() {
     if ! echo $PATH | /bin/egrep -q "(^|:)$1($|:)" ; then
        if [ "$2" = "after" ] ; then
           PATH=$PATH:$1
@@ -67,9 +63,8 @@ function ... {
 	done
 }
 
-
 # Change extensions of specified files.
-function chext {
+function chext() {
     local fname
     local new_ext="$1"
     shift
@@ -80,8 +75,7 @@ function chext {
     done
 }
 
-
-function tools {
+function tools() {
     pushd . >/dev/null
     brtop
     if [ -d $(pwd)/tools ]; then
@@ -94,7 +88,6 @@ function tools {
     popd >/dev/null
 }
 
-
 # Create a new git repo with one README commit and cd into it
 function git.nr() {
 	mkdir $1
@@ -104,7 +97,6 @@ function git.nr() {
 	git add README
 	git commit -m "First commit."
 }
-
 
 function find.name() {
     wild=\'\*$1\*\'
@@ -159,7 +151,7 @@ function gi() {
 }
 
 # Linux?
-function isLinux {
+function isLinux() {
     if [ "$OS" = "Linux" ]; then
         return 0
     fi
@@ -167,7 +159,7 @@ function isLinux {
 }
 
 # Mac?
-function isMac {
+function isMac() {
     if [ "$OS" = "Darwin" ]; then
         return 0
     fi
@@ -175,7 +167,7 @@ function isMac {
 }
 
 # iTerm2 tab titles
-function title {
+function title() {
     if [ ! -e "${HOME}/.iterm2_shell_integration.bash" ]; then
         return
     fi
