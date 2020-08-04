@@ -2,6 +2,21 @@
 
 # Shell Functions.
 
+# Set iTerm2 tab title
+#function tabTitle() {
+#    echo -ne "\033]0;"$*"\007"; 
+#}
+
+# Set iTerm2 window title
+#function winTitle() {
+#    echo -ne "\033]0;"$*"\007"; 
+#}
+
+# Always list directory contents and set title upon 'cd'
+#function cd() {
+#    builtin cd "$@"; tabTitle ${PWD##*/}; winTitle ${PWD/#"$HOME" /~};
+#}
+
 function killxscreensaver() {
     pkill xscreensaver
     echo ""
