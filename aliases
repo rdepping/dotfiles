@@ -131,7 +131,7 @@ alias pgrep='ps auxww | grep \!* | grep -v grep'
 #alias a2ps='a2ps -r -1 -C -E -g -l120 -s2'
 alias a2ps='a2ps --landscape -1 --line-numbers=5 --pretty-print --highlight-level=heavy --chars-per-line=120 --sides=duplex --prologue=color'
 
-_filteredfind='find . \( -name .svn -prune \) \( -name .git -prune \) \( -name .repo -prune \)'
+_filteredfind='find . \( -name .svn -prune \) \( -name .git -prune \) \( -name .repo -prune \) \( -name .venv -prune \)'
 _mfiles='\( -name "Makefile*" -o -name "*makefile*" -o -name "*\.mk" -o -name "*\.mak" -o -name build.xml \)'
 _sfiles='\( -name "*\.[dDhHcCsS]" -o -name "*\.cc" -o -name "*\.cpp" -o -name "*\.java" -o -name "*\.py" \)'
 _shfiles='\( -name "*\.sh" -o -name "*\.csh" -o -name "*\.zsh" -o -name "*\.tcsh" \)'
