@@ -130,3 +130,7 @@ fi
 if [[ -d "$HOME/.okta/bin" && ":$PATH:" != *":$HOME/.okta/bin:"* ]]; then
     PATH="$HOME/.okta/bin:$PATH"
 fi
+
+if [ -e "/usr/local/bin/bit" ]; then
+    complete -C /usr/local/bin/bit bit
+fi
