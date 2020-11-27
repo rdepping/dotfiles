@@ -154,6 +154,7 @@ brew "rust"
 brew "semgrep"
 brew "shellcheck"
 brew "sloccount"
+brew "socat"
 brew "sonar-scanner"
 brew "sphinx-doc"
 brew "ssh-copy-id", link: true
@@ -208,16 +209,12 @@ mas "Agenda", id: 1287445660
 mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
 mas "Bear", id: 1091189122
-mas "CleanMyMac X", id: 1339170533
 mas "CopyClip", id: 1020812363
 mas "Delicious Library", id: 635124250
-mas "DeskCover", id: 1257711898
 mas "Disk Space", id: 603688030
-mas "Elisi", id: 1406239881
 mas "EtreCheck", id: 1423715984
 mas "feedly", id: 865500966
 mas "Funter", id: 1109422934
-mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "iStat Mini", id: 927292435
 mas "Keynote", id: 409183694
@@ -237,7 +234,6 @@ mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
 mas "Slack", id: 803453959
 mas "Speedtest", id: 1153157709
-mas "SubEthaEdit", id: 728530824
 mas "The Archive Browser", id: 510232205
 mas "The Unarchiver", id: 425424353
 mas "Twitter", id: 409789998
