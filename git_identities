@@ -7,9 +7,8 @@
   email = jim.lawton@gmail.com
 
 [work]
-  ~/git/cmf/*
   ~/Work/*
 
 [personal]
-  ~/git/*
+  ~/Personal/*
 
