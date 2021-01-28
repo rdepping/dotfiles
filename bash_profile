@@ -4,18 +4,13 @@
 # Bash Interactive Shell Setup
 ########################################################################
 
-# Load user-specific personalisation.
-source ~/dotfiles/personalisation
-
-# Load paths and environment variables
-source ~/dotfiles/shellvars
-source ~/dotfiles/shellfunctions
-source ~/dotfiles/shellpaths
-source ~/dotfiles/shellaliases
-source ~/dotfiles/shellactivities
-source ~/dotfiles/bash_colors
+##############################################################################
+# Import the shell-agnostic (Bash or Zsh) environment config
+##############################################################################
+source ~/.profile
 
 # Load bash options.
+source ~/dotfiles/bash_colors
 source ~/dotfiles/bash_options
 
 #PROMPT_COMMAND='history -a'
