@@ -43,7 +43,7 @@ set t_ti= t_te=
 set showmatch
 
 " make that backspace key work the way it should
-"set backspace=indent,eol,startset 
+" set backspace=indent,eol,start
 set backspace=indent,eol
 
 set expandtab shiftwidth=4 tabstop=4
@@ -57,7 +57,7 @@ call vundle#rc()
 command W w !sudo tee % > /dev/null
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -189,7 +189,7 @@ augroup pyprog
   " When starting to edit a file:
   "   For *.py set formatting of comments and set indenting on.
   "   Don't change the order, it's important that the line with * comes first.
-  autocmd BufRead *.py set expandtab shiftwidth=4 tabstop=4 
+  autocmd BufRead *.py set expandtab shiftwidth=4 tabstop=4
 augroup END
 
 " Also, support editing of gzip-compressed files. DO NOT REMOVE THIS!

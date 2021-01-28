@@ -11,14 +11,21 @@ The contents of this repo are based on Matthew McCullough's original (https://gi
 This project contains submodules. It is suggested that you clone this into your home directory.
 
     cd ~
-    git clone --recurse-submodules https://github.com/jimlawton/dotfiles
+    git clone --recurse-submodules https://github.com/jimlawton/dotfiles .dotfiles
 
 # Setup
 There is a set up script that establishes the symlinks in your home directory. Run this once.
+
+* For ZShell
+        ~/dotfiles/_setupdotfiles.zsh
 * For Bash (needs some fixes)
-        `~/dotfiles/_setupdotfiles.sh`
+        ~/dotfiles/_setupdotfiles.bsh
 
 > NOTE: Some of my personal configuration will remain after setup. You should fork and tweak to your specific needs.
+
+# Non-automated, non-captured config
+
+Reminder-to-self: Some additional personalization lives in the `~/.config/` directory.  Specifically, the `~/.config/gh/config.yml` file for [`gh`](https://cli.github.com). It is not yet in scope for capture or copy, but some users have [shared their configuration in a Gist](https://gist.github.com/vilmibm/a1b9a405ac0d5153c614c9c646e37d13).
 
 # Contributions
 Contributions are always welcome in the form of pull requests with explanatory comments.

@@ -1,12 +1,4 @@
-#########################################################################
-# Temporary aliases useful for demos, other current projects
-#########################################################################
-
-export MYCODE=~/git
-export MYDOWNLOADS=~/Downloads
-export MYDOCUMENTS=~/Documents
-export MYECLIPSE=~/workspace
-export MYLOCAL=/local/${USER}/
+#!/bin/sh
 
 export OS=$(uname -s)
 
@@ -19,9 +11,8 @@ export PAGER="less"
 # Set less to have a default flag of -R (RAW) so color passes through
 export LESS="-R"
 
-#GPG_TTY=$(tty)
-#export GPG_TTY
-
+# GPG_TTY=$(tty)
+# export GPG_TTY
 
 #########################################################################
 # Shell settings
@@ -44,11 +35,15 @@ if [ -d /local/$USER ]; then
 fi
 export TMOUT=0
 
-# Go.
+#########################################################################
+# Go
+#########################################################################
 export GOPATH=~/go
 export GOROOT=/usr/local/opt/go/libexec
 
+#########################################################################
 # Manpages colour schemes.
+#########################################################################
 # Mostly magenta...
 #export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode - red
 #export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode - bold, magenta
@@ -69,13 +64,16 @@ export LESS_TERMCAP_us=$(printf '\e[04;38;5;200m') # enter underline mode
 #export SERVER=`/sbin/ifconfig eth0 | grep "inet addr" | awk '{print $2}' | awk -F: '{print $2}'`
 umask 002
 
-# Set vim as our default command line editor
+# Set vim as default command line editor
 export EDITOR='vim'
 
 export XXDIFF_EDITOR="xterm -e 'vi %s'"
 export PYTHONSTARTUP=~/.pythonrc
 #export PRINTER=xxx
 
+#########################################################################
+# Python Virtualenv stuff.
+#########################################################################
 # virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 # All new environments isolated from the site-packages directory.

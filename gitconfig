@@ -17,6 +17,7 @@
 	displaycommentprefix = false
 [rebase]
 	stat = true
+
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -67,7 +68,7 @@
 #	tool = araxis
 #	tool = Kaleidoscope
 #	renames = true
-	tool = bc3
+	tool = bc
 	algorithm = patience
 [diff "nodiff"]
 	command = /bin/true
@@ -79,7 +80,7 @@
 [merge]
 #	tool = araxis
 #	tool = Kaleidoscope
-	tool = bc3
+	tool = bc
 	bc3 = trustExitCode
 
 [branch]
@@ -113,6 +114,11 @@
 
 [difftool "p4merge"]
 	cmd = \"/Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE\"
+[http]
+	# proxy=http://something
+
+[hub]
+	protocol = https
 [gist]
 	private = yes
 	browse = yes
@@ -132,7 +138,7 @@
 	smudge = git media smudge %f
 
 [gh]
-protocol = https
+	protocol = https
 
 [github]
 	user = jimlawton
