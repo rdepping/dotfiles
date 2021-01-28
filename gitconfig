@@ -60,28 +60,44 @@
 [rerere]
 	enabled = true
 
-[difftool]
-	prompt = false
-[difftool "myaraxis"]
-	cmd = araxisgitdiff ONE $LOCAL THREE FOUR $REMOTE
 [diff]
+	algorithm = patience
+#	renames = true
 #	tool = araxis
 #	tool = Kaleidoscope
-#	renames = true
-	tool = bc
-	algorithm = patience
+	tool = bcomp
+
+# This is for skipping diffing files, that you don't want to add to .gitignore.
+# https://stackoverflow.com/questions/52623898/how-can-i-skip-some-files-while-taking-git-diff
 [diff "nodiff"]
 	command = /bin/true
-[mergetool]
+
+[difftool]
 	prompt = false
-	keepBackup = false
-[mergetool "myaraxis"]
-    cmd = araxisgitmerge $PWD/$REMOTE $PWD/$BASE $PWD/$LOCAL $PWD/$MERGED
+
+[difftool "myaraxis"]
+	cmd = araxisgitdiff ONE $LOCAL THREE FOUR $REMOTE
+
+[difftool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"
+
 [merge]
 #	tool = araxis
 #	tool = Kaleidoscope
-	tool = bc
-	bc3 = trustExitCode
+	tool = bcomp
+
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[mergetool "myaraxis"]
+    cmd = araxisgitmerge $PWD/$REMOTE $PWD/$BASE $PWD/$LOCAL $PWD/$MERGED
+
+[mergetool "bcomp"]
+    trustExitCode = true
+    cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+
 
 [branch]
     # Automatically set up pull to be --rebase
