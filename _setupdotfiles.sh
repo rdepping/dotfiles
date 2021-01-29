@@ -13,8 +13,8 @@ function symlinkifne {
 	if [ -e $target ]; then
 		echo "  WARNING: $target already exists!"
 		if [ "$MOVE" = "true" ]; then
-			echo "  Moving $target to ~/.old/"
-			mv $target ~/.old/
+			echo "  Moving $target to $SAVEDIR/"
+			mv $target $SAVEDIR/
 			dotless=$(echo $1 | sed s/.//)
 			echo "  Symlinking $DOTFILESDIR/$dotless to $1"
 			ln -s $DOTFILESDIR/$dotless $target
@@ -32,7 +32,7 @@ echo "Setting up..."
 
 pushd ~
 
-if [ -d $SAVEDIR ]; then
+if [ "$MOVE" = "true" -a -d $SAVEDIR ]; then
 	echo "$SAVEDIR already exists! Please clean up and try again."
 	echo "This is usesd to save old versions of your configuration files."
 	exit 1
