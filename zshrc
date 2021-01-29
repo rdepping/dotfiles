@@ -58,8 +58,10 @@ plugins=(
   # virtualenvwrapper
 )
 
+setopt AUTO_CD
+
 source $ZSH/oh-my-zsh.sh
 
 # Load rbenv ruby version selector
 # https://github.com/rbenv/rbenv#homebrew-on-macos
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
