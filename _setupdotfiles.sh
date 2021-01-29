@@ -1,6 +1,7 @@
+#!/bin/sh
 SHELLSCONFIGDIR=~/dotfiles
 DOTFILESDIR=~/dotfiles
-DOTFILES=".autoenv .bash_logout .bash_profile .bashrc .colordiffrc .colorgccrc .git_identities .gitconfig .gitignore .inputrc .profile .pythonrc .tmux .tmux.conf .vimrc .vim .xxdiffrc"
+DOTFILES=".autoenv .bash_logout .bash_profile .bashrc .Brewfile .colordiffrc .colorgccrc .conf .gemrc .git_identities .gitconfig .gitignore .inputrc .netrc .profile .pythonrc .rvmrc .shellactivities .shellaliases .shellpaths .shellvars .tmux .tmux.conf .vimrc .vim .xxdiffrc .zlogout .zprofile .zshenv .zshrc"
 DROPDIRS="bin .pip"
 MOVE=true
 SAVEDIR=~/.old
@@ -44,7 +45,7 @@ if [ ! -d dotfiles ]; then
 	echo "You need to do:"
 	echo "# cd ~"
 	echo "# git clone --recurse-submodules https://github.com/jimlawton/dotfiles"
-	echo "# cd dotfile"
+	echo "# cd dotfiles"
 	echo "# ./_setupdotfiles.sh"
 	exit 1
 fi
