@@ -58,8 +58,6 @@ plugins=(
   # virtualenvwrapper
 )
 
-setopt AUTO_CD
-
 source $ZSH/oh-my-zsh.sh
 
 # Load rbenv ruby version selector
