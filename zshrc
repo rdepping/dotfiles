@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ##############################################################################
 # oh-my-zsh setup
 ##############################################################################
@@ -15,7 +22,11 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #export ZSH_THEME="takashiyoshida"
 #export ZSH_THEME="random"
 #export ZSH_THEME="jnrowe"
-export ZSH_THEME="agnoster"
+#export ZSH_THEME="agnoster"
+
+# powerlevel10k has to be set separately. See:
+# https://github.com/romkatv/powerlevel10k/blob/master/README.md#cannot-make-powerlevel10k-work-with-my-plugin-manager
+#export ZSH_THEME="powerline10k"
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
@@ -58,8 +69,13 @@ plugins=(
   # virtualenvwrapper
 )
 
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
 source $ZSH/oh-my-zsh.sh
 
 # Load rbenv ruby version selector
 # https://github.com/rbenv/rbenv#homebrew-on-macos
 #eval "$(rbenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
