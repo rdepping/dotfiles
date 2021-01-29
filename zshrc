@@ -37,6 +37,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 ##############################################################################
+# Input key bindings.
+##############################################################################
+#set bell-style none
+#set match-hidden-files off
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+bindkey '\e[C' forward-char
+bindkey '\e[D' backward-char
+bindkey '\e[3;5~' backward-kill-word
+bindkey '^?' backward-kill-word
+bindkey '\e(' kill-word
+bindkey '\e[1;5D' backward-word
+bindkey '\e[1;5C' forward-word
+
+##############################################################################
 # oh-my-zsh setup
 ##############################################################################
 
