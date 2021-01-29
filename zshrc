@@ -30,7 +30,33 @@ export CASE_SENSITIVE="true"
 # export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
-plugins=(git battery brew osx gradle ant compleat dirpersist gem ssh-agent ruby textmate sublime)
+plugins=(
+  aws
+  battery
+  # brew
+  colorize
+  dirpersist
+  docker
+  git
+  gitignore
+  golang
+  iterm2
+  osx
+  pip
+  pipenv
+  # pyenv
+  pylint
+  python
+  ripgrep
+  ssh-agent
+  sublime
+  sublime-merge
+  sudo
+  terraform
+  textmate
+  # virtualenv
+  # virtualenvwrapper
+)
 
 source $ZSH/oh-my-zsh.sh
 
