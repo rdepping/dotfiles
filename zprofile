@@ -6,5 +6,5 @@ source ~/.profile
 ##############################################################################
 # rupa/z setup (path frecency with tab completion)
 ##############################################################################
-source ~/dotfiles/z-rupa/z.sh
+source ~/dotfiles/z/z.sh
 
