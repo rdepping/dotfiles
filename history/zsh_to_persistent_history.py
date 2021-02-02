@@ -22,7 +22,7 @@ import sys
 import os
 import socket
 import datetime
-# from shutil import copyfile
+import shutil
 import re
 
 
@@ -174,6 +174,15 @@ def main():
     print(f"Writing {savefilename} ...")
     with open(f"{savefilename}", 'w') as f:
         f.write(''.join(histdata))
+
+    # Now, move the files around.
+    #  - infile -> infile.backup
+    #  - outfile -> infile
+    if args.overwrite:
+        print(f"Moving {real_infile} to {real_infile}.backup ...")
+        shutil.move(real_infile, f"{real_infile}.backup")
+        print(f"Moving {savefilename} to {real_infile} ...")
+        shutil.move(savefilename, real_infile)
 
 
 if __name__ == "__main__":
