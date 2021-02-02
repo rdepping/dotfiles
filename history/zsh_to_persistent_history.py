@@ -83,6 +83,16 @@ def main():
     args.outfile = os.path.expanduser(args.outfile)
     print(f"Output persistent history: {args.outfile}")
 
+    extra_file = None
+    if args.extra_file:
+        extra_file = os.path.expanduser(args.extra_file)
+        if not os.path.exists(extra_file):
+            sys.exit(
+                f"Error: extra history file {extra_file} does not exist!"
+            )
+        extra_file = os.abspath(extra_file)
+        print(f"Extra ZSH input history file: {extra_file}")
+
     for filename in (args.infile, args.zfile):
         if not os.path.exists(filename):
             sys.exit(
