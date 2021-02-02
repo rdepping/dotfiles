@@ -113,10 +113,10 @@ plugins=(
   textmate
   # virtualenv
   # virtualenvwrapper
-  zsh-autosuggestions
 )
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
 
