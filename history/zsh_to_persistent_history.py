@@ -169,7 +169,10 @@ def main():
     # Sort by the date field, ascending.
     histdata = sorted(histdata, key=lambda x: x.split('|')[1].strip())
 
-    with open(args.outfile, 'w') as f:
+    # Save data.
+    savefilename = f"{real_infile}.new"
+    print(f"Writing {savefilename} ...")
+    with open(f"{savefilename}", 'w') as f:
         f.write(''.join(histdata))
 
 
