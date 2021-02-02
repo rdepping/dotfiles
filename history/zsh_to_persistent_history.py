@@ -98,7 +98,13 @@ def main():
             sys.exit(
                 f"Error: input history file {filename} does not exist!"
             )
-    if os.path.exists(args.outfile) and not args.overwrite:
+
+    if outfile != infile:
+        if os.path.exists(outfile) and not args.overwrite:
+            sys.exit(
+                f"Error: output persistent history file {outfile} already exists!"
+            )
+
     real_infile = os.path.realpath(infile)
     if not os.path.exists(real_infile):
         sys.exit(
