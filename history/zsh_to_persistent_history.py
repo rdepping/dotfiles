@@ -157,6 +157,9 @@ def main():
             extra_data = f.readlines()
         histdata.extend(extra_data)
 
+    # uniq the records.
+    histdata = list(set(histdata))
+
     # Sort by the date field, ascending.
     histdata = sorted(histdata, key=lambda x: x.split('|')[1].strip())
 
