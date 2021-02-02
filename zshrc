@@ -94,6 +94,7 @@ plugins=(
   colorize
   dirpersist
   docker
+  fast-syntax-highlighting
   git
   gitignore
   golang
