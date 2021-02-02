@@ -55,7 +55,7 @@ def main():
         "--outfile",
         type=str,
         metavar="FILE",
-        default="~/.persistent_history.new",
+        default="~/.persistent_history",
         help="Output persistent history file",
     )
     parser.add_argument(
