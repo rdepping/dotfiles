@@ -76,12 +76,12 @@ def main():
     )
     args = parser.parse_args()
 
-    args.infile = os.path.expanduser(args.infile)
-    print(f"Input persistent history: {args.infile}")
-    args.zfile = os.path.expanduser(args.zfile)
-    print(f"Input ZSH history: {args.zfile}")
-    args.outfile = os.path.expanduser(args.outfile)
-    print(f"Output persistent history: {args.outfile}")
+    infile = os.path.expanduser(args.infile)
+    print(f"Input persistent history: {infile}")
+    zfile = os.path.expanduser(args.zfile)
+    print(f"Input ZSH history: {zfile}")
+    outfile = os.path.expanduser(args.outfile)
+    print(f"Output persistent history: {outfile}")
 
     extra_file = None
     if args.extra_file:
@@ -93,18 +93,28 @@ def main():
         extra_file = os.abspath(extra_file)
         print(f"Extra ZSH input history file: {extra_file}")
 
-    for filename in (args.infile, args.zfile):
+    for filename in (infile, zfile):
         if not os.path.exists(filename):
             sys.exit(
                 f"Error: input history file {filename} does not exist!"
             )
     if os.path.exists(args.outfile) and not args.overwrite:
+    real_infile = os.path.realpath(infile)
+    if not os.path.exists(real_infile):
         sys.exit(
-            f"Error: output persistent history file {args.outfile} already exists!"
+            f"Error: input history file {infile} is a symlink to {real_infile} which does not exist!"
         )
+    print(f"Real input file: {real_infile}")
+
+    real_outfile = os.path.realpath(outfile)
+    if not os.path.exists(real_outfile):
+        sys.exit(
+            f"Error: output history file {outfile} is a symlink to {real_outfile} which does not exist!"
+        )
+    print(f"Real output file: {real_outfile}")
 
     # Read input ZSH history file.
-    with open(args.zfile, 'r') as f:
+    with open(zfile, 'r') as f:
         zdata = f.readlines()
 
     hostname = socket.gethostname()
@@ -122,7 +132,7 @@ def main():
     combined_regex = "(" + ")|(".join(user_regexes) + ")"
 
     # Read input ZSH history file.
-    with open(args.infile, 'r') as f:
+    with open(infile, 'r') as f:
         histdata = f.readlines()
 
     for line in zdata:
@@ -142,8 +152,8 @@ def main():
         histdata.append(f"{hostname} | {time} | {cmd}\n")
 
     extra_data = []
-    if args.extra_file:
-        with open(args.extra_file, 'r') as f:
+    if extra_file:
+        with open(extra_file, 'r') as f:
             extra_data = f.readlines()
         histdata.extend(extra_data)
 
