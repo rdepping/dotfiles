@@ -114,10 +114,6 @@ def main():
     print(f"Real input file: {real_infile}")
 
     real_outfile = os.path.realpath(outfile)
-    if not os.path.exists(real_outfile):
-        sys.exit(
-            f"Error: output history file {outfile} is a symlink to {real_outfile} which does not exist!"
-        )
     print(f"Real output file: {real_outfile}")
 
     # Read input ZSH history file.
