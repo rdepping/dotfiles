@@ -142,6 +142,7 @@ def main():
     with open(infile, 'r') as f:
         histdata = f.readlines()
 
+    # Add the ZSH history to persistent history.
     for line in zdata:
         if not line.startswith(':') or ';' not in line:
             continue
