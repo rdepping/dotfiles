@@ -24,6 +24,7 @@ import socket
 import datetime
 import shutil
 import re
+import filecmp
 
 
 def main():
@@ -175,14 +176,17 @@ def main():
     with open(f"{savefilename}", 'w') as f:
         f.write(''.join(histdata))
 
-    # Now, move the files around.
-    #  - infile -> infile.backup
-    #  - outfile -> infile
-    if args.overwrite:
-        print(f"Moving {real_infile} to {real_infile}.backup ...")
-        shutil.move(real_infile, f"{real_infile}.backup")
-        print(f"Moving {savefilename} to {real_infile} ...")
-        shutil.move(savefilename, real_infile)
+    if filecmp.cmp(real_infile, savefilename, shallow=True):
+        os.remove(savefilename)
+    else:
+        # Now, move the files around.
+        #  - infile -> infile.backup
+        #  - outfile -> infile
+        if args.overwrite:
+            print(f"Moving {real_infile} to {real_infile}.backup ...")
+            shutil.move(real_infile, f"{real_infile}.backup")
+            print(f"Moving {savefilename} to {real_infile} ...")
+            shutil.move(savefilename, real_infile)
 
 
 if __name__ == "__main__":
