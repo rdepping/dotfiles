@@ -30,11 +30,11 @@ import filecmp
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-O",
-        "--overwrite",
+        "-w",
+        "--write",
         action="store_true",
-        dest="overwrite",
-        help="Overwrite the output file, if it already exists.",
+        dest="write",
+        help="Write/overwrite the output file.",
     )
     parser.add_argument(
         "-s",
@@ -101,7 +101,7 @@ def main():
             )
 
     if outfile != infile:
-        if os.path.exists(outfile) and not args.overwrite:
+        if os.path.exists(outfile) and not args.write:
             sys.exit(
                 f"Error: output persistent history file {outfile} already exists!"
             )
@@ -170,7 +170,7 @@ def main():
     # Sort by the date field, ascending.
     histdata = sorted(histdata, key=lambda x: x.split('|')[1].strip())
 
-    if args.overwrite:
+    if args.write:
         # Save data.
         savefilename = f"{real_infile}.new"
         print(f"Writing {savefilename} ...")
