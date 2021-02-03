@@ -169,7 +169,8 @@ def main():
     histdata = list(set(histdata))
 
     # Sort by the date field, ascending.
-    histdata = sorted(histdata, key=lambda x: x.split('|')[1].strip())
+    # Keep the order of commands at the same time unchanged.
+    histdata = sorted(histdata, key=lambda x: "".join(x.split('|')[1:]))
 
     if args.write:
         # Save data.
