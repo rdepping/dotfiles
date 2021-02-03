@@ -170,19 +170,20 @@ def main():
     # Sort by the date field, ascending.
     histdata = sorted(histdata, key=lambda x: x.split('|')[1].strip())
 
-    # Save data.
-    savefilename = f"{real_infile}.new"
-    print(f"Writing {savefilename} ...")
-    with open(f"{savefilename}", 'w') as f:
-        f.write(''.join(histdata))
+    if args.overwrite:
+        # Save data.
+        savefilename = f"{real_infile}.new"
+        print(f"Writing {savefilename} ...")
+        with open(f"{savefilename}", 'w') as f:
+            f.write(''.join(histdata))
 
-    if filecmp.cmp(real_infile, savefilename, shallow=True):
-        os.remove(savefilename)
-    else:
-        # Now, move the files around.
-        #  - infile -> infile.backup
-        #  - outfile -> infile
-        if args.overwrite:
+        if filecmp.cmp(real_infile, savefilename, shallow=True):
+            print(f"No changes, removing {savefilename} ...")
+            os.remove(savefilename)
+        else:
+            # Now, move the files around.
+            #  - infile -> infile.backup
+            #  - outfile -> infile
             print(f"Moving {real_infile} to {real_infile}.backup ...")
             shutil.move(real_infile, f"{real_infile}.backup")
             print(f"Moving {savefilename} to {real_infile} ...")
