@@ -124,7 +124,7 @@ def main():
     with open(zfile, 'r') as f:
         zdata = f.readlines()
 
-    hostname = socket.gethostname()
+    hostname = socket.gethostname().lower()
     user = os.getenv("USER")
     usernames = os.getenv("_USERNAMES")
     if usernames is None:
