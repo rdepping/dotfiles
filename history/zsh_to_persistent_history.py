@@ -169,23 +169,30 @@ def main():
     histdata = sorted(histdata, key=lambda x: "".join(x.split('|')[1:]))
 
     if args.write:
-        # Save data.
-        savefilename = f"{real_infile}.new"
+
+        if real_outfile == real_infile:
+            # Save data to a temporary file.
+            savefilename = f"{real_infile}.new"
+        else:
+            # Save data to output file.
+            savefilename = f"{real_outfile}"
+
         print(f"Writing {savefilename} ...")
         with open(f"{savefilename}", 'w') as f:
             f.write(''.join(histdata))
 
-        if filecmp.cmp(real_infile, savefilename, shallow=True):
-            print(f"No changes, removing {savefilename} ...")
-            os.remove(savefilename)
-        else:
-            # Now, move the files around.
-            #  - infile -> infile.backup
-            #  - outfile -> infile
-            print(f"Moving {real_infile} to {real_infile}.backup ...")
-            shutil.move(real_infile, f"{real_infile}.backup")
-            print(f"Moving {savefilename} to {real_infile} ...")
-            shutil.move(savefilename, real_infile)
+        if real_outfile == real_infile:
+            if filecmp.cmp(real_infile, savefilename, shallow=True):
+                print(f"No changes, removing {savefilename} ...")
+                os.remove(savefilename)
+            else:
+                # Now, move the files around.
+                #  - infile -> infile.backup
+                #  - outfile -> infile
+                print(f"Moving {real_infile} to {real_infile}.backup ...")
+                shutil.move(real_infile, f"{real_infile}.backup")
+                print(f"Moving {savefilename} to {real_infile} ...")
+                shutil.move(savefilename, real_infile)
 
 
 if __name__ == "__main__":
