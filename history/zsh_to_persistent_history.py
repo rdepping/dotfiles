@@ -65,7 +65,7 @@ def main():
         type=str,
         metavar="FILE",
         default="~/.zsh_history",
-        help="Input zsh history file",
+        help="Input ZSH history file",
     )
     parser.add_argument(
         "-e",
