@@ -25,6 +25,21 @@ import datetime
 import shutil
 import re
 import filecmp
+import glob
+
+
+# Skip any potential credentials.
+def _skip_line(combined_regex, line):
+    ret = False
+    if "API_KEY" in line or "PASSWORD" in line:
+        ret = True
+    if "$ARTIFACTORY_API_KEY" in line in line:
+        ret = False
+    if re.match(combined_regex, line):
+        ret = True
+    if ret:
+        print(f"Skipping {line}")
+    return ret
 
 
 def main():
@@ -75,6 +90,14 @@ def main():
         metavar="FILE",
         help="Extra input persistent history file",
     )
+    parser.add_argument(
+        "-I",
+        "--iterm-files",
+        type=str,
+        dest="iterm_files",
+        metavar="FILE",
+        help="Extra input iTerm2 history file(s) - can be wild-carded",
+    )
     args = parser.parse_args()
 
     infile = os.path.expanduser(args.infile)
@@ -91,8 +114,26 @@ def main():
             sys.exit(
                 f"Error: extra history file {extra_file} does not exist!"
             )
-        extra_file = os.abspath(extra_file)
+        extra_file = os.path.abspath(extra_file)
         print(f"Extra ZSH input history file: {extra_file}")
+
+    iterm_files = []
+    if args.iterm_files:
+        if '*' in args.iterm_files:
+            print(args.iterm_files)
+            iterm_file_list = glob.glob(os.path.expanduser(args.iterm_files))
+            print(iterm_file_list)
+            for filepath in iterm_file_list:
+                iterm_files.append(os.path.abspath(filepath))
+        else:
+            iterm_files = [os.path.abspath(os.path.expanduser(args.iterm_files))]
+
+    for iterm_file in iterm_files:
+        if not os.path.exists(iterm_file):
+            sys.exit(
+                f"Error: extra history file {iterm_file} does not exist!"
+            )
+        print(f"Extra iTerm2 input history file: {iterm_file}")
 
     for filename in (infile, zfile):
         if not os.path.exists(filename):
@@ -146,12 +187,7 @@ def main():
         time = datetime.datetime.fromtimestamp(timestamp)
         # duration = line.split(':')[2].strip().split(';')[0]
         cmd = line.split(';')[1].strip()
-        # Remove any potential creds
-        if "API_KEY" in cmd or "PASSWORD" in cmd:
-            print(f"Skipping {cmd}")
-            continue
-        if re.match(combined_regex, cmd):
-            print(f"Skipping {cmd}")
+        if _skip_line(combined_regex, cmd):
             continue
         histdata.append(f"{hostname} | {time} | {cmd}\n")
 
@@ -160,6 +196,25 @@ def main():
         with open(extra_file, 'r') as f:
             extra_data = f.readlines()
         histdata.extend(extra_data)
+
+    iterm_data = []
+    if iterm_files:
+        for iterm_file in iterm_files:
+            print(f"Reading {iterm_file}")
+            with open(iterm_file, 'r') as f:
+                iterm_data = f.readlines()
+            if len(iterm_data) % 2 != 0:
+                sys.exit(f"Error: input file {iterm_file} does not have an even number of lines!")
+            it = iter(iterm_data)
+            for line in it:
+                if not line.startswith('#'):
+                    continue
+                timestamp = int(line.split('#')[1].strip())
+                time = datetime.datetime.fromtimestamp(timestamp)
+                cmd = next(it).strip()
+                if _skip_line(combined_regex, cmd):
+                    continue
+                histdata.append(f"{hostname} | {time} | {cmd}\n")
 
     # uniq the records.
     histdata = list(set(histdata))
