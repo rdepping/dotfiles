@@ -218,11 +218,13 @@ gpip(){
 }
 
 upgrade_pyenvs(){
-    for env_ver in $(pyenv versions --bare); do 
-        pyenv shell $env_ver
+    if command -v pyenv 1>/dev/null 2>&1; then
+        for env_ver in $(pyenv versions --bare); do 
+            pyenv shell $env_ver
+            pyenv version
+            PIP_REQUIRE_VIRTUALENV="0" pip3 install --quiet --upgrade pip gnureadline virtualenv virtualenvwrapper
+        done
+        pyenv shell -
         pyenv version
-        PIP_REQUIRE_VIRTUALENV="0" pip3 install --upgrade pip gnureadline virtualenv virtualenvwrapper
-    done
-    pyenv shell -
-    pyenv version
+    fi
 }
