@@ -29,6 +29,8 @@ setopt BANG_HIST                 # Treat the '!' character specially during expa
 
 setopt AUTO_CD                   # Automatically cd to a path if specified as a command.
 
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
