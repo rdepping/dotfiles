@@ -90,7 +90,7 @@ export CASE_SENSITIVE="true"
 plugins=(
   aws
   battery
-  # brew
+  brew
   colorize
   dirpersist
   docker
@@ -112,8 +112,8 @@ plugins=(
   sudo
   terraform
   textmate
-  # virtualenv
-  # virtualenvwrapper
+  virtualenv
+  virtualenvwrapper
 )
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
