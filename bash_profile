@@ -101,8 +101,14 @@ if isMac; then
     fi
 fi
 
-if command -v pyenv 1>/dev/null 2>&1; then
+if isMac; then
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+    fi
+else
+    export PATH="/home/jim/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
@@ -129,3 +135,5 @@ fi
 if [ -e "/usr/local/bin/bit" ]; then
     complete -C /usr/local/bin/bit bit
 fi
+
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
