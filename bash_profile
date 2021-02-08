@@ -101,14 +101,13 @@ if isMac; then
     fi
 fi
 
-if isMac; then
-    if command -v pyenv 1>/dev/null 2>&1; then
+if [ -d "$HOME/.pyenv" ]; then
+    if ! command -v pyenv 1>/dev/null 2>&1; then
+        export PATH="$HOME/.pyenv/bin:$PATH"
+    else
         eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
     fi
-else
-    export PATH="/home/jim/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
 fi
 
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
