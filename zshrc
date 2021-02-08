@@ -54,6 +54,18 @@ bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
 ##############################################################################
+# pyenv setup.
+##############################################################################
+if [ -d "$HOME/.pyenv" ]; then
+    if ! command -v pyenv 1>/dev/null 2>&1; then
+        export PATH="$HOME/.pyenv/bin:$PATH"
+    else
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+
+##############################################################################
 # oh-my-zsh setup
 ##############################################################################
 
