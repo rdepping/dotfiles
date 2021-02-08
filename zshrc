@@ -118,8 +118,8 @@ plugins=(
   virtualenvwrapper
 )
 
-source powerlevel10k/powerlevel10k.zsh-theme
-source zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Load rbenv ruby version selector
