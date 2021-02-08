@@ -54,19 +54,6 @@ bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
 ##############################################################################
-# pyenv setup.
-##############################################################################
-if [ -d "$HOME/.pyenv" ]; then
-    if ! command -v pyenv 1>/dev/null 2>&1; then
-        export PATH="$HOME/.pyenv/bin:$PATH"
-    else
-        eval "$(pyenv init -)"
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-#eval "$(pyenv init - --no-rehash zsh)"
-
-##############################################################################
 # oh-my-zsh setup
 ##############################################################################
 
@@ -141,6 +128,21 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+##############################################################################
+# pyenv setup.
+##############################################################################
+if [ -d "$HOME/.pyenv" ]; then
+    # See if there is a user-install...
+    if ! command -v pyenv 1>/dev/null 2>&1; then
+        export PATH="$HOME/.pyenv/bin:$PATH"
+    fi
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+#eval "$(pyenv init - --no-rehash zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
