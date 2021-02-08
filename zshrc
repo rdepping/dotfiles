@@ -64,6 +64,7 @@ if [ -d "$HOME/.pyenv" ]; then
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
+#eval "$(pyenv init - --no-rehash zsh)"
 
 ##############################################################################
 # oh-my-zsh setup
@@ -140,8 +141,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-eval "$(pyenv init - --no-rehash zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
