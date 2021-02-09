@@ -34,7 +34,7 @@ test_for_xcode_installation()
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ## TODO: Find out how to automatedly install
-# Box desktop
+# MesloLGS NF fonts for Powerline, https://github.com/romkatv/powerlevel10k/blob/master/README.md#manual-font-installation
 
 ## Maintenance
 softwareupdate -i -a # Install all software updates
