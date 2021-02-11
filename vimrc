@@ -12,12 +12,12 @@ set shell=/bin/bash
 "set term=screen
 set term=linux
 
-set paste
+" set paste
 " set number
 
 " set our tabs to four spaces
 set ts=4
-set smartindent
+" set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -248,3 +248,17 @@ augroup END
 autocmd FileType python set complete+=k/usr/local/pydiction isk+=.,(
 
 endif " has ("autocmd")
+
+" Use terminals bracketed paste mode to set/unset Vims paste mode when you paste.
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
