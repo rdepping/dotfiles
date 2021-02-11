@@ -1,0 +1,6 @@
+[user]
+    name = Jim Lawton
+    email = james.lawton@forcepoint.com
+[hub]
+    protocol = https
+    host = https://github.cicd.cloud.fpdev.io
