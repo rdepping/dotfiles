@@ -54,11 +54,14 @@ for dotfile in $DOTFILES; do
 	symlinkifne $dotfile
 done
 
-for dropdir in $DROPDIRS; do
-    if [ ! -e ~/$dropdir ]; then
-        ln -s ~/Dropbox/unixhome/$dropdir ~/
-    fi
-done
+# Any directories you want linked from Dropbox.
+if [ -e ~/Dropbox/ ]; then
+    for dropdir in $DROPDIRS; do
+        if [ ! -e ~/$dropdir ]; then
+            ln -s ~/Dropbox/unixhome/$dropdir ~/
+        fi
+    done
+fi
 
 popd
 
