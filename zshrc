@@ -108,7 +108,7 @@ plugins=(
   pylint
   python
   ripgrep
-  ssh-agent
+  # ssh-agent
   sublime
   sublime-merge
   sudo
