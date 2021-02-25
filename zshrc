@@ -33,8 +33,6 @@ setopt CORRECT                   # Correction.
 setopt CORRECT_ALL               # Correction.
 setopt NO_CASE_GLOB              # Case-insensitive globbing.
 
-zstyle ':completion:*:*:make:*' tag-order 'targets'
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -130,9 +128,6 @@ source $ZSH/oh-my-zsh.sh
 # https://github.com/rbenv/rbenv#homebrew-on-macos
 #eval "$(rbenv init -)"
 
-GIT_EXTRAS=/usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-[[ ! -f $GIT_EXTRAS ]] || source $GIT_EXTRAS
-
 ##############################################################################
 # pyenv setup.
 ##############################################################################
@@ -152,3 +147,21 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k.zsh.
 [[ ! -f ~/dotfiles/p10k.zsh ]] || source ~/dotfiles/p10k.zsh
+
+##############################################################################
+# zsh completion setup.
+##############################################################################
+
+GIT_EXTRAS=/usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+[[ ! -f $GIT_EXTRAS ]] || source $GIT_EXTRAS
+
+zstyle ':completion:*:*:make:*' tag-order 'targets'
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle :compinstall filename $HOME/.zshrc
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
