@@ -1,10 +1,10 @@
 [includeIf "gitdir:~/Work/"]
-    path = dotfiles/gitconfig-work
+    path = ~/dotfiles/git-identity-work
 [includeIf "gitdir:~/Personal/"]
-    path = dotfiles/gitconfig-personal
+    path = ~/dotfiles/git-identity-personal
 
 [include]
-    path = dotfiles/git-aliases
+    path = ~/dotfiles/git-aliases
 
 [push]
 	default = simple
@@ -139,8 +139,6 @@
 [gist]
 	private = yes
 	browse = yes
-#[credential]
-	# helper = cache --timeout=300
 
 [push]
 	default = matching
@@ -164,9 +162,6 @@
 [http]
 	sslVerify = false
 	postBuffer = 524288000
-
-[credential]
-	helper = osxkeychain
 
 [filter "lfs"]
 	required = true

@@ -1,0 +1,6 @@
+[include]
+	path = dotfiles/gitconfig-common
+
+[credential]
+	helper = cache --timeout=300
+
