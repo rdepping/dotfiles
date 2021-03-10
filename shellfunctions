@@ -228,3 +228,25 @@ function upgrade_pyenvs() {
         pyenv version
     fi
 }
+
+# Clone a repo and install pre-commit hooks if configured.
+function git.clone() {
+	git clone $1
+	pushd "${1##*/}" > /dev/null
+    if [ -e .pre-commit-config.yaml ]; then
+        if [ ! -e ./configure-hooks.sh ]; then
+            echo "Error: pre-commit hooks required, but install script is not present!"
+            popd > /dev/null
+            return 1
+        fi
+        which pre-commit >/dev/null || {
+            echo "Error: pre-commit hooks required, but 'pre-commit' is not installed!"
+            popd > /dev/null
+            return 1
+        }
+        ./configure-hooks.sh --install
+    fi
+    popd > /dev/null
+    return 0
+}
+
