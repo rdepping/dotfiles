@@ -209,15 +209,15 @@ function title() {
     fi
 }
 
-gpip2(){
+function gpip2() {
    PIP_REQUIRE_VIRTUALENV="0" pip2 "$@"
 }
 
-gpip(){
+function gpip() {
    PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
 }
 
-upgrade_pyenvs(){
+function upgrade_pyenvs() {
     if command -v pyenv 1>/dev/null 2>&1; then
         for env_ver in $(pyenv versions --bare); do 
             pyenv shell $env_ver
