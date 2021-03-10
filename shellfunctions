@@ -231,8 +231,8 @@ function upgrade_pyenvs() {
 
 # Clone a repo and install pre-commit hooks if configured.
 function git.clone() {
-	git clone $1
-	pushd "${1##*/}" > /dev/null
+    git clone $1
+    pushd "${1##*/}" > /dev/null
     if [ -e .pre-commit-config.yaml ]; then
         if [ ! -e ./configure-hooks.sh ]; then
             echo "Error: pre-commit hooks required, but install script is not present!"
