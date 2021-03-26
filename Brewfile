@@ -25,6 +25,8 @@ brew "apr"
 brew "apr-util"
 brew "asciidoc"
 brew "asciinema"
+brew "gettext"
+brew "libffi"
 brew "atomicparsley"
 brew "autojump"
 brew "awk"
@@ -40,8 +42,6 @@ brew "bit-git"
 brew "black"
 brew "brew-cask-completion"
 brew "freetype"
-brew "gettext"
-brew "libffi"
 brew "cairo"
 brew "clang-format"
 brew "consul"
@@ -103,6 +103,7 @@ brew "graphviz"
 brew "grep"
 brew "grpcurl"
 brew "grunt-completion"
+brew "gtk+3"
 brew "hadolint"
 brew "htop"
 brew "httpie"
@@ -225,6 +226,7 @@ cask "font-source-code-pro-for-powerline"
 cask "font-ubuntu-mono-derivative-powerline"
 cask "inspec"
 cask "java"
+cask "jedit"
 cask "jupyter-notebook-ql"
 cask "kdiff3"
 cask "lumen"
@@ -263,6 +265,7 @@ mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft Word", id: 462054704
 mas "my41cx", id: 949272407
+mas "Notability", id: 360593530
 mas "Notability", id: 736189492
 mas "Numbers", id: 409203825
 mas "Okta Extension App", id: 1439967473
