@@ -167,6 +167,7 @@ brew "python@2", link: false
 brew "qt"
 brew "rake-completion"
 brew "rbenv"
+brew "rclone"
 brew "repo"
 brew "ripgrep"
 brew "rlwrap"
@@ -186,6 +187,7 @@ brew "terminal-notifier"
 brew "terraform-docs"
 brew "tfenv"
 brew "tflint"
+brew "tfsec"
 brew "tig"
 brew "tldr"
 brew "todo-txt"
@@ -250,7 +252,6 @@ cask "virtualbox"
 cask "vlc"
 cask "xquartz"
 mas "24 Hour Wallpaper", id: 1226087575
-mas "AdBlock", id: 1402042596
 mas "Agenda", id: 1287445660
 mas "aText", id: 488566438
 mas "Battery Monitor", id: 836505650
@@ -262,7 +263,6 @@ mas "EtreCheck", id: 1423715984
 mas "feedly", id: 865500966
 mas "Funter", id: 1109422934
 mas "iMovie", id: 408981434
-mas "iStat Mini", id: 927292435
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
@@ -287,4 +287,3 @@ mas "Twitter", id: 409789998
 mas "Typist", id: 415166115
 mas "Unsplash Wallpapers", id: 1284863847
 mas "WhatsApp", id: 1147396723
-mas "Wire", id: 931134707
