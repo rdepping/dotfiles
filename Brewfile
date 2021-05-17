@@ -90,6 +90,7 @@ brew "gimme-aws-creds"
 brew "gist"
 brew "git"
 brew "git-extras"
+brew "git-filter-repo"
 brew "git-quick-stats"
 brew "git-standup", link: false
 brew "gnu-sed"
