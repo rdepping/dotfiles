@@ -56,3 +56,5 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Node JS Packages (from Brew Install of Node and NPM)
 # PATH=$PATH:/usr/local/share/npm/bin
+
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
