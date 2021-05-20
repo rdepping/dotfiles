@@ -158,7 +158,7 @@ def main():
     print(f"Real output file: {real_outfile}")
 
     # Read input ZSH history file.
-    with open(zfile, 'r') as f:
+    with open(zfile, 'r', errors="ignore") as f:
         zdata = f.readlines()
 
     hostname = socket.gethostname().lower()
@@ -176,7 +176,7 @@ def main():
     combined_regex = "(" + ")|(".join(user_regexes) + ")"
 
     # Read input ZSH history file.
-    with open(infile, 'r') as f:
+    with open(infile, 'r', errors="ignore") as f:
         histdata = f.readlines()
 
     # Add the ZSH history to persistent history.
@@ -193,7 +193,7 @@ def main():
 
     extra_data = []
     if extra_file:
-        with open(extra_file, 'r') as f:
+        with open(extra_file, 'r', errors="ignore") as f:
             extra_data = f.readlines()
         histdata.extend(extra_data)
 
@@ -201,7 +201,7 @@ def main():
     if iterm_files:
         for iterm_file in iterm_files:
             print(f"Reading {iterm_file}")
-            with open(iterm_file, 'r') as f:
+            with open(iterm_file, 'r', errors="ignore") as f:
                 iterm_data = f.readlines()
             if len(iterm_data) % 2 != 0:
                 sys.exit(f"Error: input file {iterm_file} does not have an even number of lines!")
