@@ -224,6 +224,7 @@ function upgrade_pyenvs() {
             pyenv version
             PIP_REQUIRE_VIRTUALENV="0" pip3 install --quiet --upgrade pip gnureadline virtualenv virtualenvwrapper
         done
+        unset PYENV_VERSION
         pyenv shell -
         pyenv version
     fi
