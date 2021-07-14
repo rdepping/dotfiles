@@ -12,3 +12,4 @@ source ~/dotfiles/shellpaths
 source ~/dotfiles/shellaliases
 source ~/dotfiles/shellactivities
 
+eval "$(pyenv init --path)"
