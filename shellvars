@@ -85,3 +85,6 @@ export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 # Make pip only install into a virtualenv.
 export PIP_REQUIRE_VIRTUALENV=true
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
