@@ -10,6 +10,7 @@ export SAVEHIST=1000000000       # Number of history entries to save to disk
 export HISTTIMEFORMAT="[%F %T] "
 export HIST_STAMPS="+%Y-%m-%d %H:%M:%S"
 export HISTDUP=erase             # Erase duplicates in the history file
+#export DISABLE_VENV_CD=1         # virtualenvwrapper
 
 setopt APPEND_HISTORY            # Append history to the history file (no overwriting)
 setopt SHARE_HISTORY             # Share history between all sessions.
@@ -105,8 +106,8 @@ plugins=(
   iterm2
   osx
   pip
-  pipenv
-  # pyenv
+  # pipenv
+  pyenv
   pylint
   python
   ripgrep
@@ -117,7 +118,7 @@ plugins=(
   terraform
   textmate
   virtualenv
-  # virtualenvwrapper
+  virtualenvwrapper
 )
 
 source $HOME/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
@@ -148,6 +149,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k.zsh.
 [[ ! -f ~/dotfiles/p10k.zsh ]] || source ~/dotfiles/p10k.zsh
+
+# Quieten startup errors.
+#typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 ##############################################################################
 # zsh completion setup.
